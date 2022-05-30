@@ -1,0 +1,17 @@
+body::before {
+  display: block;
+  content: "";
+  height: 25px;
+}
+
+#buttonPaars {
+  color: black;
+  background-color: #ac80ff;
+  border: none;
+}
+
+#arrowUpPaars,
+#linkPaars {
+  color: #ac80ff;
+  text-decoration: none;
+}
