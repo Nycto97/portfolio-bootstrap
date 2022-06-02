@@ -105,10 +105,10 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form method="post" action="emailform.php">
+            <form method="post" action="contactform.php">
               <div class="mb-3">
                 <label for="name" class="col-form-label"> Naam* </label>
-                <input type="text" class="form-control" id="name" required />
+                <input type="text" class="form-control" name="name" id="name" required />
               </div>
               <!-- <div class="mb-3">
                 <label for="last-name" class="col-form-label"
@@ -123,19 +123,24 @@
               </div> -->
               <div class="mb-3">
                 <label for="email" class="col-form-label">E-mail*</label>
-                <input type="email" class="form-control" id="email" required />
+                <input type="email" class="form-control" name="email" id="email" required />
               </div>
               <!-- <div class="mb-3">
                 <label for="phone" class="col-form-label">Telefoonnummer</label>
                 <input type="tel" class="form-control" id="phone" />
               </div> -->
-              <!-- <div class="mb-3">
+              <div class="mb-3">
                 <label for="subject" class="col-form-label"> Onderwerp* </label>
-                <input type="text" class="form-control" id="subject" required />
-              </div> -->
+                <input type="text" class="form-control" name="subject" id="subject" required />
+              </div>
               <div class="mb-3">
                 <label for="message" class="col-form-label"> Bericht* </label>
-                <input type="text" class="form-control" id="message" required />
+                <textarea
+                  name="message"
+                  class="form-control"
+                  id="message"
+                  required
+                ></textarea>
               </div>
               <div class="modal-footer">
                 <button
@@ -146,7 +151,7 @@
                   Sluit
                 </button>
 
-                <button type="submit" class="btn btn-primary" id="buttonPaars">
+                <button type="submit" name="submit" class="btn btn-primary" id="buttonPaars">
                   Verstuur
                 </button>
               </div>
