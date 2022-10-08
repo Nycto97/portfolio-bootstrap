@@ -74,15 +74,31 @@ if(isset($_POST['submit'])){
                 @mail($toEmail, $subject, $htmlContent, $headers); 
                  
                 $status = 'success'; 
-                $statusMsg = 'Thank you! Your contact request has submitted successfully, we will get back to you soon.'; 
-                $postData = ''; 
+                $statusMsg = 'Thank you! Your contact request has submitted successfully, I will get back to you soon.'; 
+                $postData = '';
             }else{ 
-                $statusMsg = 'Robot verification failed, please try again.'; 
+                $statusMsg = 'Robot verification failed, please try again.';
             } 
         }else{ 
-            $statusMsg = 'Please check on the reCAPTCHA box.'; 
+            $statusMsg = 'Please check the reCAPTCHA box.';
+            header("location:javascript://history.go(-1)");
         } 
     }else{ 
-        $statusMsg = '<p>Please fill all the mandatory fields:</p>'.trim($valErr, '<br/>'); 
-    } 
+        $statusMsg = '<p>Please fill all the mandatory fields:</p>'.trim($valErr, '<br/>');
+    }
+    echo '<script>
+    alert("'.$statusMsg.'");
+    window.location.href = "index.html";
+    </script>';
 }
+
+// Display status message 
+// echo $statusMsg;
+// + "\n\n" + 'Redirecting to previous page in 5 seconds.'
+
+// sleep(5);
+
+// Go back to previous page
+// header("location:javascript://history.go(-1)");
+
+?>
