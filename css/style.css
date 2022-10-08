@@ -16,16 +16,9 @@ body::before {
   text-decoration: none;
 }
 
-.anchor1 {
-    display: block;
-    position: relative;
-    top: -70px;
-    visibility: hidden;
-}
-
-.anchor2 {
-    display: block;
-    position: relative;
-    top: -90px;
-    visibility: hidden;
+.anchor {
+  display: block;
+  position: relative;
+  top: -95px;
+  visibility: hidden;
 }
