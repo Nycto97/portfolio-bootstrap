@@ -16,9 +16,16 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/x-icon" href="/img/nycto.ico" />
+    <!-- Google recaptcha API library -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Jelle Van Goethem</title>
   </head>
   <body>
+    <?php 
+    // Include form submission script 
+    include_once 'contactform.php'; 
+    ?>
+
     <!--nav-->
 
     <nav class="navbar navbar-expand-md bg-white navbar-light py-3 fixed-top">
@@ -45,7 +52,7 @@
             <li class="nav-item">
               <a href="#contact" class="nav-link text-dark">Contact</a>
             </li>
-                        <li class="nav-item">
+            <li class="nav-item">
               <a href="cv.html" class="nav-link text-dark">Mijn CV</a>
             </li>
           </ul>
@@ -111,8 +118,14 @@
             ></button>
           </div>
           <div class="modal-body">
+            <!-- Status message -->
+            <?php if(!empty($statusMsg)){ ?>
+            <div class="status-msg <?php echo $status; ?>">
+              <?php echo $statusMsg; ?>
+            </div>
+            <?php } ?>
             <form method="post" action="contactform.php">
-              <div class="mb-3">
+              <div class="mb-2">
                 <label for="name" class="col-form-label"> Naam* </label>
                 <input
                   type="text"
@@ -122,7 +135,7 @@
                   required
                 />
               </div>
-              <!-- <div class="mb-3">
+              <!-- <div class="mb-2">
                 <label for="last-name" class="col-form-label"
                   >Achternaam*</label
                 >
@@ -133,7 +146,7 @@
                   required
                 />
               </div> -->
-              <div class="mb-3">
+              <div class="mb-2">
                 <label for="email" class="col-form-label">E-mail*</label>
                 <input
                   type="email"
@@ -147,7 +160,7 @@
                 <label for="phone" class="col-form-label">Telefoonnummer</label>
                 <input type="tel" class="form-control" id="phone" />
               </div> -->
-              <div class="mb-3">
+              <div class="mb-2">
                 <label for="subject" class="col-form-label"> Onderwerp* </label>
                 <input
                   type="text"
@@ -157,7 +170,7 @@
                   required
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-2">
                 <label for="message" class="col-form-label"> Bericht* </label>
                 <textarea
                   name="message"
@@ -165,6 +178,14 @@
                   id="message"
                   required
                 ></textarea>
+              </div>
+              <!-- Google reCAPTCHA box -->
+              <div class="mb-3">
+                <p class="col-form-label">ReCAPTCHA*</p>
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6Ld7AWciAAAAAFi1E6gpc6fQa_8gXym7jrlA-Ldq"
+                ></div>
               </div>
               <div class="modal-footer">
                 <button
