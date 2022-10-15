@@ -44,16 +44,24 @@
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#over_mij" class="nav-link text-dark">Over mij</a>
+              <a href="#over_mij" class="nav-link text-dark myNavCloseFn"
+                >Over mij</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#projecten" class="nav-link text-dark">Projecten</a>
+              <a href="#projecten" class="nav-link text-dark myNavCloseFn"
+                >Projecten</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#contact" class="nav-link text-dark">Contact</a>
+              <a href="#contact" class="nav-link text-dark myNavCloseFn"
+                >Contact</a
+              >
             </li>
             <li class="nav-item">
-              <a href="cv.html" class="nav-link text-dark">Mijn CV</a>
+              <a href="cv.html" class="nav-link text-dark myNavCloseFn"
+                >Mijn CV</a
+              >
             </li>
           </ul>
         </div>
@@ -237,8 +245,8 @@
                 </div>
                 <h3 class="card-title mb-3">Projecten</h3>
                 <p class="card-text">
-                  Hier vindt je de projecten die ik gedaan heb, waaronder deze
-                  website en vorige prototypes.
+                  Ontdek de projecten die ik gedaan heb, waaronder deze website
+                  en vorige prototypes.
                 </p>
                 <a href="#projecten" class="btn btn-dark" id="buttonPaars"
                   >Ontdek ze hier</a
@@ -270,7 +278,7 @@
 
     <!--over mij-->
 
-    <section class="px-lg-5 p-lg-5">
+    <section class="p-lg-5">
       <p class="anchor" id="over_mij"></p>
       <div class="container">
         <div class="row align-items-center justify-content-between">
@@ -401,15 +409,14 @@
         </p>
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
-            
             <div class="card bg-light">
               <div class="card-body text-center">
                 <img
                   src="img/portfolio-1_crop.png"
                   class="rounded mb-3"
-                  alt=""
+                  alt="Portfolio Website"
                 />
-                <h3 class="card-title mb-2">Portfolio website</h3>
+                <h3 class="card-title mb-2">Portfolio Website</h3>
                 <p class="card-text">
                   Persoonlijke website, gemaakt met HTML & CSS, die niet
                   responsive is.
@@ -424,9 +431,9 @@
                 <img
                   src="img/portfolio-2_crop.png"
                   class="rounded mb-3"
-                  alt=""
+                  alt="Responsive Portfolio"
                 />
-                <h3 class="card-title mb-2">Responsive portfolio</h3>
+                <h3 class="card-title mb-2">Responsive Portfolio</h3>
                 <p class="card-text">
                   Mijn portfolio website responsive gemaakt met media queries.
                 </p>
@@ -440,9 +447,9 @@
                 <img
                   src="img/portfolio-3_crop.png"
                   class="rounded mb-3"
-                  alt=""
+                  alt="Bootstrap Portfolio"
                 />
-                <h3 class="card-title mb-2">Bootstrap portfolio</h3>
+                <h3 class="card-title mb-2">Bootstrap Portfolio</h3>
                 <p class="card-text">
                   De website die u momenteel aan het bekijken bent m.b.v.
                   Bootstrap.
@@ -457,9 +464,9 @@
                 <img
                   src="img/oop-project_crop.png"
                   class="rounded mb-3"
-                  alt=""
+                  alt="OOP Project"
                 />
-                <h3 class="card-title mb-2">OOP-project</h3>
+                <h3 class="card-title mb-2">OOP Project</h3>
                 <p class="card-text">
                   Java project voor het vak Object Oriented Programming.
                 </p>
@@ -468,14 +475,18 @@
           </div>
 
           <div class="col-md-6 col-lg-4">
-            <div class="card bg-light mb-4 mb-sm-5">
+            <div class="card bg-light">
               <a
                 href="https://yu-gi-oh-eindproject-jelle.herokuapp.com/"
                 class="noTextDeco"
                 target="_blank"
               >
                 <div class="card-body text-center">
-                  <img src="img/ygo2_crop.png" class="rounded mb-3" alt="Yu-Gi-Oh! DB project" />
+                  <img
+                    src="img/ygo2_crop.png"
+                    class="rounded mb-3"
+                    alt="Yu-Gi-Oh! DB"
+                  />
                   <h3 class="card-title mb-2">Yu-Gi-Oh! DB</h3>
                   <p class="card-text" style="color: #212529">
                     Java-Spring project voor het vak Advanced Programming
@@ -487,6 +498,9 @@
           </div>
 
           <div class="col-md-6 col-lg-4">
+            <!-- ALLEEN laatste card moet onderstaande margin bottom hebben,
+            omdat: op mobile wordt 1 card getoond en dan moet de margin
+            enkel op de onderste card -->
             <div class="card bg-light mb-4 mb-sm-5">
               <a
                 href="https://hy-skw-team5.herokuapp.com/"
@@ -494,7 +508,11 @@
                 target="_blank"
               >
                 <div class="card-body text-center">
-                  <img src="img/HY_crop.png" class="rounded mb-3" alt="HY project" />
+                  <img
+                    src="img/HY_crop.png"
+                    class="rounded mb-3"
+                    alt="HY App"
+                  />
                   <h3 class="card-title mb-2">HY App</h3>
                   <p class="card-text" style="color: #212529">
                     Java-Spring project voor het vak Projecten voor het
@@ -504,7 +522,6 @@
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -642,7 +659,7 @@
                   href="https://www.facebook.com/JelleVG"
                   target="_blank"
                   id="linkPaars"
-                  >https://www.facebook.com/JelleVG</a
+                  >facebook.com/JelleVG</a
                 >
               </div>
             </div>
@@ -655,7 +672,15 @@
 
     <footer class="p-3 bg-dark text-white text-center position-relative">
       <div class="container">
-        <p class="lead mb-0">Gemaakt en beheerd door Jelle Van Goethem</p>
+        <p class="lead mb-0">
+          Gemaakt en beheerd door
+          <a
+            href="https://www.linkedin.com/in/JelleVanGoethem"
+            class="noTextDeco3"
+            target="_blank"
+            >Jelle Van Goethem</a
+          >
+        </p>
 
         <a href="#" class="position-absolute bottom-0 end-0 p-2 mx-3">
           <i class="bi bi-arrow-up-circle h1" id="arrowUpPaars"></i>
@@ -668,5 +693,20 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+
+    <!-- TODO fixen dat onderstaand enkel gebeurt als navbar ingeklapt is, en eens uitgevoerd, 
+      check op size van screen zodat eventListeners weggaan als pagina terug groot genoeg is en dus navbar uitgerokken is en niet meer toegeklapt,
+    anders visuele bug bij item in navbar klikken wanneer navbar niet ingeklapt is!!! -->
+
+    <!-- <script>
+      const navLinks = document.querySelectorAll(".myNavCloseFn");
+      const menuToggle = document.getElementById("navmenu");
+      // if (document.title === "Jelle Van Goethem")
+        navLinks.forEach((l) => {
+          l.addEventListener("click", () => {
+            new bootstrap.Collapse(menuToggle).toggle();
+          });
+        });
+    </script> -->
   </body>
 </html>
