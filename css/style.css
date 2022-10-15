@@ -23,11 +23,15 @@ body::before {
   visibility: hidden;
 }
 
-.noTextDeco {
+.noTextDeco, .noTextDeco2 {
   text-decoration: none;
   color: #212529;
 }
 
 .noTextDeco:hover {
   color: #ac80ff;
+}
+
+.noTextDeco2:hover {
+  color: #F39800;
 }
