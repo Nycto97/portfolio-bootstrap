@@ -39,8 +39,11 @@ body::before {
 }
 
 .noTextDeco:hover,
-.noTextDeco3:hover {
-  color: #ac80ff;
+.noTextDeco3:hover,
+.nav-link:hover,
+.navbar-brand:hover,
+.active {
+  color: #ac80ff !important;
 }
 
 .noTextDeco2:hover {
