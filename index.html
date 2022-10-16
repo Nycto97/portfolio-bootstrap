@@ -44,16 +44,24 @@
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#over_mij" class="nav-link text-dark">Over mij</a>
+              <a href="#over_mij" class="nav-link text-dark myNavCloseFn"
+                >Over mij</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#projecten" class="nav-link text-dark">Projecten</a>
+              <a href="#projecten" class="nav-link text-dark myNavCloseFn"
+                >Projecten</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#contact" class="nav-link text-dark">Contact</a>
+              <a href="#contact" class="nav-link text-dark myNavCloseFn"
+                >Contact</a
+              >
             </li>
             <li class="nav-item">
-              <a href="cv.html" class="nav-link text-dark">Mijn CV</a>
+              <a href="cv.html" class="nav-link text-dark myNavCloseFn"
+                >Mijn CV</a
+              >
             </li>
           </ul>
         </div>
@@ -237,8 +245,8 @@
                 </div>
                 <h3 class="card-title mb-3">Projecten</h3>
                 <p class="card-text">
-                  Ontdek de projecten die ik gedaan heb, waaronder deze
-                  website en vorige prototypes.
+                  Ontdek de projecten die ik gedaan heb, waaronder deze website
+                  en vorige prototypes.
                 </p>
                 <a href="#projecten" class="btn btn-dark" id="buttonPaars"
                   >Ontdek ze hier</a
@@ -271,7 +279,7 @@
 
     <!--over mij-->
 
-    <section class="px-lg-5 p-lg-5">
+    <section class="p-lg-5">
       <p class="anchor" id="over_mij"></p>
       <div class="container">
         <div class="row align-items-center justify-content-between">
@@ -468,7 +476,7 @@
           </div>
 
           <div class="col-md-6 col-lg-4">
-            <div class="card bg-light mb-4 mb-sm-5">
+            <div class="card bg-light">
               <a
                 href="https://yu-gi-oh-eindproject-jelle.herokuapp.com/"
                 class="noTextDeco"
@@ -491,6 +499,9 @@
           </div>
 
           <div class="col-md-6 col-lg-4">
+            <!-- ALLEEN laatste card moet onderstaande margin bottom hebben,
+            omdat: op mobile wordt 1 card getoond en dan moet de margin
+            enkel op de onderste card -->
             <div class="card bg-light mb-4 mb-sm-5">
               <a
                 href="https://hy-skw-team5.herokuapp.com/"
@@ -731,5 +742,20 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+
+    <!-- TODO fixen dat onderstaand enkel gebeurt als navbar ingeklapt is, en eens uitgevoerd, 
+      check op size van screen zodat eventListeners weggaan als pagina terug groot genoeg is en dus navbar uitgerokken is en niet meer toegeklapt,
+    anders visuele bug bij item in navbar klikken wanneer navbar niet ingeklapt is!!! -->
+
+    <!-- <script>
+      const navLinks = document.querySelectorAll(".myNavCloseFn");
+      const menuToggle = document.getElementById("navmenu");
+      // if (document.title === "Jelle Van Goethem")
+        navLinks.forEach((l) => {
+          l.addEventListener("click", () => {
+            new bootstrap.Collapse(menuToggle).toggle();
+          });
+        });
+    </script> -->
   </body>
 </html>
