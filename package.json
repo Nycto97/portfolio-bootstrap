@@ -12,6 +12,9 @@
         "type": "git",
         "url": "git+https://github.com/Nycto97/portfolio-bootstrap.git"
     },
+    "devDependencies": {
+        "prettier": "^3.2.5"
+    },
     "keywords": [
         "bootstrap",
         "portfolio"
