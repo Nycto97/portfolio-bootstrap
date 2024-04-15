@@ -1,143 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/x-icon" href="/img/nycto.ico" />
-    <!-- Google recaptcha API library -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <title>Jelle Van Goethem</title>
-  </head>
-  <body>
-    <?php 
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" type="image/x-icon" href="/img/nycto.ico" />
+        <!-- Google recaptcha API library -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <title>Jelle Van Goethem</title>
+    </head>
+    <body>
+        <?php 
     // Include form submission script 
     include_once 'contactform.php'; 
     ?>
 
-    <!--nav-->
+        <!--nav-->
 
-    <nav class="navbar navbar-expand-md bg-white navbar-light py-3 fixed-top">
-      <div class="container">
-        <a href="#" class="navbar-brand text-dark">Jelle Van Goethem</a>
+        <nav class="navbar navbar-expand-md bg-white navbar-light py-3 fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand text-dark">Jelle Van Goethem</a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="#over_mij" class="nav-link text-dark myNavCloseFn"
-                >Over mij</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#projecten" class="nav-link text-dark myNavCloseFn"
-                >Projecten</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link text-dark myNavCloseFn"
-                >Contact</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="cv.html" class="nav-link text-dark myNavCloseFn"
-                >Mijn CV</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#over_mij" class="nav-link text-dark myNavCloseFn">Over mij</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projecten" class="nav-link text-dark myNavCloseFn">Projecten</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link text-dark myNavCloseFn">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cv.html" class="nav-link text-dark myNavCloseFn">Mijn CV</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    <!--jumbotron-ish-->
+        <!--jumbotron-ish-->
 
-    <section
-      class="bg-dark text-light p-4 p-lg-0 pt-lg-5 text-center text-sm-start"
-    >
-      <div class="container">
-        <div class="d-sm-flex align-items-center justify-content-between">
-          <div>
-            <h1 class="mb-4 mb-lg-0 mt-5 mt-lg-0">
-              Student Graduaat Programmeren
-            </h1>
-            <p class="lead my-4">
-              Momenteel volg ik het graduaat Programmeren aan Thomas More. Deze
-              website is een project, gemaakt als opdracht voor het vak User
-              Interfaces, waarbij ik nieuwe dingen leer en ze probeer toe te
-              passen op deze webpagina. Dit is eveneens mijn persoonlijke
-              website die ik gebruik om mijn informatie te delen en om mensen de
-              mogelijkheid te geven om contact op te nemen met mij.
-            </p>
-            <button
-              class="btn btn-primary btn-lg mb-2 mb-lg-0"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="buttonPaars"
-            >
-              Stuur mij een bericht
-            </button>
-          </div>
-          <img
-            class="img-fluid w-50 d-none d-md-block p-3"
-            src="img/10511522_736071756468389_8002414371274091488_o.jpg"
-            alt=""
-          />
-        </div>
-      </div>
-    </section>
+        <section class="bg-dark text-light p-4 p-lg-0 pt-lg-5 text-center text-sm-start">
+            <div class="container">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div>
+                        <h1 class="mb-4 mb-lg-0 mt-5 mt-lg-0">Student Graduaat Programmeren</h1>
+                        <p class="lead my-4">
+                            Momenteel volg ik het graduaat Programmeren aan Thomas More. Deze website is een project,
+                            gemaakt als opdracht voor het vak User Interfaces, waarbij ik nieuwe dingen leer en ze
+                            probeer toe te passen op deze webpagina. Dit is eveneens mijn persoonlijke website die ik
+                            gebruik om mijn informatie te delen en om mensen de mogelijkheid te geven om contact op te
+                            nemen met mij.
+                        </p>
+                        <button
+                            class="btn btn-primary btn-lg mb-2 mb-lg-0"
+                            data-bs-toggle="modal"
+                            data-bs-target="#myModal"
+                            id="buttonPaars">
+                            Stuur mij een bericht
+                        </button>
+                    </div>
+                    <img
+                        class="img-fluid w-50 d-none d-md-block p-3"
+                        src="img/10511522_736071756468389_8002414371274091488_o.jpg"
+                        alt="" />
+                </div>
+            </div>
+        </section>
 
-    <!--modal contact me-->
+        <!--modal contact me-->
 
-    <div
-      class="modal fade"
-      id="myModal"
-      tabindex="-1"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="myModalLabel">Uw bericht aan Jelle</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form method="post" action="contactform.php">
-              <div class="mb-2">
-                <label for="name" class="col-form-label"> Naam* </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="name"
-                  id="name"
-                  required
-                />
-              </div>
-              <!-- <div class="mb-2">
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">Uw bericht aan Jelle</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="contactform.php">
+                            <div class="mb-2">
+                                <label for="name" class="col-form-label">Naam*</label>
+                                <input type="text" class="form-control" name="name" id="name" required />
+                            </div>
+                            <!-- <div class="mb-2">
                 <label for="last-name" class="col-form-label"
                   >Achternaam*</label
                 >
@@ -148,557 +107,410 @@
                   required
                 />
               </div> -->
-              <div class="mb-2">
-                <label for="email" class="col-form-label">E-mail*</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  id="email"
-                  required
-                />
-              </div>
-              <!-- <div class="mb-3">
+                            <div class="mb-2">
+                                <label for="email" class="col-form-label">E-mail*</label>
+                                <input type="email" class="form-control" name="email" id="email" required />
+                            </div>
+                            <!-- <div class="mb-3">
                 <label for="phone" class="col-form-label">Telefoonnummer</label>
                 <input type="tel" class="form-control" id="phone" />
               </div> -->
-              <div class="mb-2">
-                <label for="subject" class="col-form-label"> Onderwerp* </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  id="subject"
-                  required
-                />
-              </div>
-              <div class="mb-2">
-                <label for="message" class="col-form-label"> Bericht* </label>
-                <textarea
-                  name="message"
-                  class="form-control"
-                  id="message"
-                  required
-                ></textarea>
-              </div>
-              <!-- Google reCAPTCHA box -->
-              <div class="mb-3">
-                <p class="col-form-label">ReCAPTCHA*</p>
-                <div
-                  class="g-recaptcha"
-                  data-sitekey="6Ld7AWciAAAAAFi1E6gpc6fQa_8gXym7jrlA-Ldq"
-                ></div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Sluit
-                </button>
+                            <div class="mb-2">
+                                <label for="subject" class="col-form-label">Onderwerp*</label>
+                                <input type="text" class="form-control" name="subject" id="subject" required />
+                            </div>
+                            <div class="mb-2">
+                                <label for="message" class="col-form-label">Bericht*</label>
+                                <textarea name="message" class="form-control" id="message" required></textarea>
+                            </div>
+                            <!-- Google reCAPTCHA box -->
+                            <div class="mb-3">
+                                <p class="col-form-label">ReCAPTCHA*</p>
+                                <div class="g-recaptcha" data-sitekey="6Ld7AWciAAAAAFi1E6gpc6fQa_8gXym7jrlA-Ldq"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluit</button>
 
-                <button
-                  type="submit"
-                  name="submit"
-                  class="btn btn-primary"
-                  id="buttonPaars"
-                >
-                  Verstuur
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--cards 1 links-->
-
-    <section class="p-lg-5">
-      <div class="container">
-        <div class="row text-center g-4">
-          <div class="col-md">
-            <div
-              class="card bg-dark text-light mt-4 mt-lg-0 mb-0 mb-md-4 mb-lg-0"
-            >
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-info-circle"></i>
+                                <button type="submit" name="submit" class="btn btn-primary" id="buttonPaars">
+                                    Verstuur
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <h3 class="card-title mb-3">Over mij</h3>
-                <p class="card-text">
-                  Kom meer te weten over mij en mijn zoektocht naar een
-                  veelbelovende toekomst.
-                </p>
-                <a href="#over_mij" class="btn btn-primary" id="buttonPaars"
-                  >Lees meer</a
-                >
-              </div>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="card bg-dark text-light mt-0 mt-md-4 mt-lg-0">
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-terminal"></i>
+        </div>
+
+        <!--cards 1 links-->
+
+        <section class="p-lg-5">
+            <div class="container">
+                <div class="row text-center g-4">
+                    <div class="col-md">
+                        <div class="card bg-dark text-light mt-4 mt-lg-0 mb-0 mb-md-4 mb-lg-0">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <i class="bi bi-info-circle"></i>
+                                </div>
+                                <h3 class="card-title mb-3">Over mij</h3>
+                                <p class="card-text">
+                                    Kom meer te weten over mij en mijn zoektocht naar een veelbelovende toekomst.
+                                </p>
+                                <a href="#over_mij" class="btn btn-primary" id="buttonPaars">Lees meer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="card bg-dark text-light mt-0 mt-md-4 mt-lg-0">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <i class="bi bi-terminal"></i>
+                                </div>
+                                <h3 class="card-title mb-3">Projecten</h3>
+                                <p class="card-text">
+                                    Ontdek de projecten die ik gedaan heb, waaronder deze website en vorige prototypes.
+                                </p>
+                                <a href="#projecten" class="btn btn-dark" id="buttonPaars">Ontdek ze hier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="card bg-dark text-light mb-4 mb-md-0 mt-0 mt-md-4 mt-lg-0">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h3 class="card-title mb-3">Contact</h3>
+                                <p class="card-text">
+                                    Hier vind je mijn links, waaronder GitHub, LinkedIn en Facebook.
+                                </p>
+                                <a href="#contact" class="btn btn-primary" id="buttonPaars">Lees meer</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="card-title mb-3">Projecten</h3>
-                <p class="card-text">
-                  Ontdek de projecten die ik gedaan heb, waaronder deze website
-                  en vorige prototypes.
-                </p>
-                <a href="#projecten" class="btn btn-dark" id="buttonPaars"
-                  >Ontdek ze hier</a
-                >
-              </div>
             </div>
-          </div>
-          <div class="col-md">
-            <div
-              class="card bg-dark text-light mb-4 mb-md-0 mt-0 mt-md-4 mt-lg-0"
-            >
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-people"></i>
+        </section>
+
+        <!--over mij-->
+
+        <section class="p-lg-5">
+            <p class="anchor" id="over_mij"></p>
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md">
+                        <img src="img/IMG_20191104_200425_crop.jpg" class="img-fluid" alt="" />
+                    </div>
+                    <div class="col-md-12 col-lg-7 p-4 p-sm-5">
+                        <h2>Aangename kennismaking</h2>
+                        <p class="lead">
+                            Hallo, mijn naam is Jelle Van Goethem en ik ben geboren te Mechelen in 1997. Ik hou van
+                            muziek, films, natuur, auto's en autorijden, gamen, spiritualiteit, psychedelic art,
+                            wederzijds respect, eerlijkheid, lekker eten, dingen ontdekken... Ik sport en fitness graag,
+                            maar door lichamelijke problemen is dit niet meer zo evident. Vroeger, toen ik nog vrij jong
+                            was, ging ik ook vaak recreatief ijsschaatsen en zwemmen. Ook heb ik 8 jaar lang basketbal
+                            gespeeld bij Pitzemburg Basket Mechelen (nu Kangoeroes Basket Mechelen genaamd). Hiermee was
+                            ik gestart op 8-jarige leeftijd. Voor ik ben beginnen basketten, heb ik ook een paar lessen
+                            karting gevolgd, maar ik ben snel overgestapt naar een intensievere sport.
+                        </p>
+                    </div>
                 </div>
-                <h3 class="card-title mb-3">Contact</h3>
-                <p class="card-text">
-                  Hier vind je mijn links, waaronder GitHub, LinkedIn en Facebook.
-                </p>
-                <a href="#contact" class="btn btn-primary" id="buttonPaars"
-                  >Lees meer</a
-                >
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!--over mij-->
-
-    <section class="p-lg-5">
-      <p class="anchor" id="over_mij"></p>
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-md">
-            <img
-              src="img/IMG_20191104_200425_crop.jpg"
-              class="img-fluid"
-              alt=""
-            />
-          </div>
-          <div class="col-md-12 col-lg-7 p-4 p-sm-5">
-            <h2>Aangename kennismaking</h2>
-            <p class="lead">
-              Hallo, mijn naam is Jelle Van Goethem en ik ben geboren te
-              Mechelen in 1997. Ik hou van muziek, films, natuur, auto's en
-              autorijden, gamen, spiritualiteit, psychedelic art, wederzijds
-              respect, eerlijkheid, lekker eten, dingen ontdekken... Ik sport en
-              fitness graag, maar door lichamelijke problemen is dit niet meer
-              zo evident. Vroeger, toen ik nog vrij jong was, ging ik ook vaak
-              recreatief ijsschaatsen en zwemmen. Ook heb ik 8 jaar lang
-              basketbal gespeeld bij Pitzemburg Basket Mechelen (nu Kangoeroes
-              Basket Mechelen genaamd). Hiermee was ik gestart op 8-jarige
-              leeftijd. Voor ik ben beginnen basketten, heb ik ook een paar
-              lessen karting gevolgd, maar ik ben snel overgestapt naar een
-              intensievere sport.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-lg-5 bg-dark text-light">
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-md d-block d-lg-none">
-            <img
-              src="img/11071844_824455047630059_1563663485074523956_o.jpg"
-              class="img-fluid"
-              alt=""
-            />
-          </div>
-          <div class="col-md-12 col-lg-7 p-4 p-sm-5">
-            <h2>Mijn achtergrond</h2>
-            <p class="lead">
-              Door omstandigheden heb ik mijn middelbare school niet kunnen
-              beëindigen, met als gevolg dat ik de school verliet zonder
-              diploma. Ik heb verschillende jobs gedaan, waaronder ik bij de
-              laatste een vast contract had. Na (legitieme) ziekte ben ik helaas
-              ontslagen, waardoor ik thuis zat zonder werk. Omdat ik
-              ooraandoeningen en chronische pijnen in m'n lichaam heb, was mijn
-              zoektocht naar werk niet van de simpelste. Ik zag het niet zitten
-              om met overheersende pijn te werken, dus ben ik oplossingen gaan
-              zoeken. Na een periode van 2 jaar, heb ik begin 2020 besloten om
-              mijn
-              <em>diploma secundair onderwijs</em> te behalen via het
-              volwassenenonderwijs bij
-              <a
-                href="https://crescendo-cvo.be/nl/opleidingen/informatica/ict-administratie/"
-                target="_blank"
-                id="linkPaars"
-                >Crescendo CVO</a
-              >. Ik heb midden 2021 het diploma secundair behaald in de richting
-              <em>ICT en Administratie</em> en kan nu opgelucht zeggen dat ik
-              het middelbaar heb afgemaakt.
-            </p>
-          </div>
-          <div class="col-md d-none d-lg-block">
-            <img
-              src="img/11071844_824455047630059_1563663485074523956_o.jpg"
-              class="img-fluid"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-lg-5">
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-md">
-            <img
-              src="img/IMG_20191128_232613_crop.jpg"
-              class="img-fluid"
-              alt=""
-            />
-          </div>
-          <div class="col-md-12 col-lg-7 p-4 p-sm-5">
-            <h2>Mijn kijk op de toekomst</h2>
-            <p class="lead">
-              Om nog een stapje verder te gaan, heb ik mezelf overhaald om nog
-              een opleiding te volgen. Dit doe ik met de steun van de
-              <a
-                href="https://www.vdab.be/opleidingen/aanbod/O-AMI-750487/cursus/C-AMI-191469/Graduaat_programmeren_-_1ste_jaar-SINT-KATELIJNE-WAVER/"
-                target="_blank"
-                id="linkPaars"
-                >VDAB</a
-              >. Omdat ik graag met computers werk, niet creatief genoeg ben om
-              te tekenen of om dingen te ontwerpen, hou van structuur en cijfers
-              en graag dingen laat werken, heb ik voor het
-              <em>graduaat Programmeren</em> gekozen. Met dit 2-jarig graduaat
-              aan de
-              <a
-                href="https://www.thomasmore.be/opleidingen/graduaat/programmeren-dag-avondonderwijs/programmeren-dagonderwijs/sint-katelijne-waver/"
-                target="_blank"
-                id="linkPaars"
-                >Thomas More Hogeschool</a
-              >
-              hoop ik mijn kansen op de arbeidsmarkt te vergroten en een job te
-              vinden die ik oprecht leuk vind. Door chronische pijnen die ik
-              jammerlijk heb, zoals ik eerder al vermeldde, kan ik geen zware,
-              fysieke arbeid meer verrichten. Daarom is een job op de computer
-              ideaal voor mij, mits voldoende pauzes, stretches en beweging.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--cards 2 projecten-->
-
-    <section class="p-md-5 bg-dark">
-      <p class="anchor" id="projecten"></p>
-      <div class="container">
-        <h2 class="text-center text-light pt-5 pt-md-0">Mijn projecten</h2>
-        <p class="lead text-center text-light mb-5 mb-sm-5 mt-4">
-          Hieronder ziet u mijn al dan niet voltooide projecten:
-        </p>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="img/portfolio-1_crop.png"
-                  class="rounded mb-3"
-                  alt="Portfolio Website"
-                />
-                <h3 class="card-title mb-2">Portfolio Website</h3>
-                <p class="card-text">
-                  Persoonlijke website, gemaakt met HTML & CSS, die niet
-                  responsive is.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="img/portfolio-2_crop.png"
-                  class="rounded mb-3"
-                  alt="Responsive Portfolio"
-                />
-                <h3 class="card-title mb-2">Responsive Portfolio</h3>
-                <p class="card-text">
-                  Mijn portfolio website responsive gemaakt met media queries.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="img/portfolio-3_crop.png"
-                  class="rounded mb-3"
-                  alt="Bootstrap Portfolio"
-                />
-                <h3 class="card-title mb-2">Bootstrap Portfolio</h3>
-                <p class="card-text">
-                  De website die u momenteel aan het bekijken bent m.b.v.
-                  Bootstrap.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="img/oop-project_crop.png"
-                  class="rounded mb-3"
-                  alt="OOP Project"
-                />
-                <h3 class="card-title mb-2">OOP Project</h3>
-                <p class="card-text">
-                  Java project voor het vak Object Oriented Programming.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card bg-light">
-              <a
-                href="https://yu-gi-oh-eindproject-jelle.herokuapp.com/"
-                class="noTextDeco"
-                target="_blank"
-              >
-                <div class="card-body text-center">
-                  <img
-                    src="img/ygo2_crop.png"
-                    class="rounded mb-3"
-                    alt="Yu-Gi-Oh! DB"
-                  />
-                  <h3 class="card-title mb-2">Yu-Gi-Oh! DB</h3>
-                  <p class="card-text" style="color: #212529">
-                    Java-Spring project voor het vak Advanced Programming
-                    Techniques.
-                  </p>
+        <section class="p-lg-5 bg-dark text-light">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md d-block d-lg-none">
+                        <img src="img/11071844_824455047630059_1563663485074523956_o.jpg" class="img-fluid" alt="" />
+                    </div>
+                    <div class="col-md-12 col-lg-7 p-4 p-sm-5">
+                        <h2>Mijn achtergrond</h2>
+                        <p class="lead">
+                            Door omstandigheden heb ik mijn middelbare school niet kunnen beëindigen, met als gevolg dat
+                            ik de school verliet zonder diploma. Ik heb verschillende jobs gedaan, waaronder ik bij de
+                            laatste een vast contract had. Na (legitieme) ziekte ben ik helaas ontslagen, waardoor ik
+                            thuis zat zonder werk. Omdat ik ooraandoeningen en chronische pijnen in m'n lichaam heb, was
+                            mijn zoektocht naar werk niet van de simpelste. Ik zag het niet zitten om met overheersende
+                            pijn te werken, dus ben ik oplossingen gaan zoeken. Na een periode van 2 jaar, heb ik begin
+                            2020 besloten om mijn
+                            <em>diploma secundair onderwijs</em> te behalen via het volwassenenonderwijs bij
+                            <a
+                                href="https://crescendo-cvo.be/nl/opleidingen/informatica/ict-administratie/"
+                                target="_blank"
+                                id="linkPaars"
+                                >Crescendo CVO</a
+                            >. Ik heb midden 2021 het diploma secundair behaald in de richting
+                            <em>ICT en Administratie</em> en kan nu opgelucht zeggen dat ik het middelbaar heb
+                            afgemaakt.
+                        </p>
+                    </div>
+                    <div class="col-md d-none d-lg-block">
+                        <img src="img/11071844_824455047630059_1563663485074523956_o.jpg" class="img-fluid" alt="" />
+                    </div>
                 </div>
-              </a>
             </div>
-          </div>
+        </section>
 
-          <div class="col-md-6 col-lg-4">
-            <!-- ALLEEN laatste card moet onderstaande margin bottom hebben,
+        <section class="p-lg-5">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md">
+                        <img src="img/IMG_20191128_232613_crop.jpg" class="img-fluid" alt="" />
+                    </div>
+                    <div class="col-md-12 col-lg-7 p-4 p-sm-5">
+                        <h2>Mijn kijk op de toekomst</h2>
+                        <p class="lead">
+                            Om nog een stapje verder te gaan, heb ik mezelf overhaald om nog een opleiding te volgen.
+                            Dit doe ik met de steun van de
+                            <a
+                                href="https://www.vdab.be/opleidingen/aanbod/O-AMI-750487/cursus/C-AMI-191469/Graduaat_programmeren_-_1ste_jaar-SINT-KATELIJNE-WAVER/"
+                                target="_blank"
+                                id="linkPaars"
+                                >VDAB</a
+                            >. Omdat ik graag met computers werk, niet creatief genoeg ben om te tekenen of om dingen te
+                            ontwerpen, hou van structuur en cijfers en graag dingen laat werken, heb ik voor het
+                            <em>graduaat Programmeren</em> gekozen. Met dit 2-jarig graduaat aan de
+                            <a
+                                href="https://www.thomasmore.be/opleidingen/graduaat/programmeren-dag-avondonderwijs/programmeren-dagonderwijs/sint-katelijne-waver/"
+                                target="_blank"
+                                id="linkPaars"
+                                >Thomas More Hogeschool</a
+                            >
+                            hoop ik mijn kansen op de arbeidsmarkt te vergroten en een job te vinden die ik oprecht leuk
+                            vind. Door chronische pijnen die ik jammerlijk heb, zoals ik eerder al vermeldde, kan ik
+                            geen zware, fysieke arbeid meer verrichten. Daarom is een job op de computer ideaal voor
+                            mij, mits voldoende pauzes, stretches en beweging.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--cards 2 projecten-->
+
+        <section class="p-md-5 bg-dark">
+            <p class="anchor" id="projecten"></p>
+            <div class="container">
+                <h2 class="text-center text-light pt-5 pt-md-0">Mijn projecten</h2>
+                <p class="lead text-center text-light mb-5 mb-sm-5 mt-4">
+                    Hieronder ziet u mijn al dan niet voltooide projecten:
+                </p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <img src="img/portfolio-1_crop.png" class="rounded mb-3" alt="Portfolio Website" />
+                                <h3 class="card-title mb-2">Portfolio Website</h3>
+                                <p class="card-text">
+                                    Persoonlijke website, gemaakt met HTML & CSS, die niet responsive is.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <img src="img/portfolio-2_crop.png" class="rounded mb-3" alt="Responsive Portfolio" />
+                                <h3 class="card-title mb-2">Responsive Portfolio</h3>
+                                <p class="card-text">Mijn portfolio website responsive gemaakt met media queries.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <img src="img/portfolio-3_crop.png" class="rounded mb-3" alt="Bootstrap Portfolio" />
+                                <h3 class="card-title mb-2">Bootstrap Portfolio</h3>
+                                <p class="card-text">
+                                    De website die u momenteel aan het bekijken bent m.b.v. Bootstrap.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <img src="img/oop-project_crop.png" class="rounded mb-3" alt="OOP Project" />
+                                <h3 class="card-title mb-2">OOP Project</h3>
+                                <p class="card-text">Java project voor het vak Object Oriented Programming.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card bg-light">
+                            <a
+                                href="https://yu-gi-oh-eindproject-jelle.herokuapp.com/"
+                                class="noTextDeco"
+                                target="_blank">
+                                <div class="card-body text-center">
+                                    <img src="img/ygo2_crop.png" class="rounded mb-3" alt="Yu-Gi-Oh! DB" />
+                                    <h3 class="card-title mb-2">Yu-Gi-Oh! DB</h3>
+                                    <p class="card-text" style="color: #212529">
+                                        Java-Spring project voor het vak Advanced Programming Techniques.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <!-- ALLEEN laatste card moet onderstaande margin bottom hebben,
             omdat: op mobile wordt 1 card getoond en dan moet de margin
             enkel op de onderste card -->
-            <div class="card bg-light mb-4 mb-sm-5">
-              <a
-                href="https://hy-skw-team5.herokuapp.com/"
-                class="noTextDeco2"
-                target="_blank"
-              >
-                <div class="card-body text-center">
-                  <img
-                    src="img/HY_crop.png"
-                    class="rounded mb-3"
-                    alt="HY App"
-                  />
-                  <h3 class="card-title mb-2">HY App</h3>
-                  <p class="card-text" style="color: #212529">
-                    Java-Spring project voor het vak Projecten voor het
-                    Werkveld.
-                  </p>
+                        <div class="card bg-light mb-4 mb-sm-5">
+                            <a href="https://hy-skw-team5.herokuapp.com/" class="noTextDeco2" target="_blank">
+                                <div class="card-body text-center">
+                                    <img src="img/HY_crop.png" class="rounded mb-3" alt="HY App" />
+                                    <h3 class="card-title mb-2">HY App</h3>
+                                    <p class="card-text" style="color: #212529">
+                                        Java-Spring project voor het vak Projecten voor het Werkveld.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </a>
             </div>
-          </div>
+        </section>
+
+        <!--cards 3 fotogalerij-->
+
+        <div class="container col-lg-5 pt-4 pt-sm-5">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img
+                            src="img/10511522_736071756468389_8002414371274091488_o.jpg"
+                            class="d-block w-100"
+                            alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/IMG_20191104_200425_crop.jpg" class="d-block w-100" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="img/11071844_824455047630059_1563663485074523956_o.jpg"
+                            class="d-block w-100"
+                            alt="..." />
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Vorige</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Volgende</span>
+                </button>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <!--cards 3 fotogalerij-->
+        <!--accordion contact me-->
 
-    <div class="container col-lg-5 pt-4 pt-sm-5">
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="img/10511522_736071756468389_8002414371274091488_o.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="img/IMG_20191104_200425_crop.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="img/11071844_824455047630059_1563663485074523956_o.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Vorige</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Volgende</span>
-        </button>
-      </div>
-    </div>
+        <section id="contact" class="p-md-5 my-4 my-md-0">
+            <div class="container">
+                <h2 class="text-center mb-4">Contact</h2>
+                <div class="accordion accordion-flush" id="questions">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed text-dark"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#question-one">
+                                GitHub
+                            </button>
+                        </h2>
+                        <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">
+                                <a href="https://github.com/Nycto97" target="_blank" id="linkPaars"
+                                    >github.com/Nycto97</a
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-    <!--accordion contact me-->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed text-dark"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#question-two">
+                                LinkedIn
+                            </button>
+                        </h2>
+                        <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">
+                                <a href="https://www.linkedin.com/in/JelleVanGoethem" target="_blank" id="linkPaars"
+                                    >linkedin.com/in/JelleVanGoethem</a
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-    <section id="contact" class="p-md-5 my-4 my-md-0">
-      <div class="container">
-        <h2 class="text-center mb-4">Contact</h2>
-        <div class="accordion accordion-flush" id="questions">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed text-dark"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-one"
-              >
-                GitHub
-              </button>
-            </h2>
-            <div
-              id="question-one"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                <a
-                  href="https://github.com/Nycto97"
-                  target="_blank"
-                  id="linkPaars"
-                  >github.com/Nycto97</a
-                >
-              </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed text-dark"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#question-three">
+                                Facebook
+                            </button>
+                        </h2>
+                        <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">
+                                <a href="https://www.facebook.com/JelleVG" target="_blank" id="linkPaars"
+                                    >facebook.com/JelleVG</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed text-dark"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-two"
-              >
-                LinkedIn
-              </button>
-            </h2>
-            <div
-              id="question-two"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                <a
-                  href="https://www.linkedin.com/in/JelleVanGoethem"
-                  target="_blank"
-                  id="linkPaars"
-                  >linkedin.com/in/JelleVanGoethem</a
-                >
-              </div>
+        <!--footer-->
+
+        <footer class="p-3 bg-dark text-white text-center position-relative">
+            <div class="container">
+                <p class="lead mb-0">
+                    Gemaakt en beheerd door
+                    <a href="https://www.linkedin.com/in/JelleVanGoethem" class="noTextDeco3" target="_blank"
+                        >Jelle Van Goethem</a
+                    >
+                </p>
+
+                <a href="#" class="position-absolute bottom-0 end-0 p-2 mx-3">
+                    <i class="bi bi-arrow-up-circle h1" id="arrowUpPaars"></i>
+                </a>
             </div>
-          </div>
+        </footer>
 
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed text-dark"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-three"
-              >
-                Facebook
-              </button>
-            </h2>
-            <div
-              id="question-three"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                <a
-                  href="https://www.facebook.com/JelleVG"
-                  target="_blank"
-                  id="linkPaars"
-                  >facebook.com/JelleVG</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
 
-    <!--footer-->
-
-    <footer class="p-3 bg-dark text-white text-center position-relative">
-      <div class="container">
-        <p class="lead mb-0">
-          Gemaakt en beheerd door
-          <a
-            href="https://www.linkedin.com/in/JelleVanGoethem"
-            class="noTextDeco3"
-            target="_blank"
-            >Jelle Van Goethem</a
-          >
-        </p>
-
-        <a href="#" class="position-absolute bottom-0 end-0 p-2 mx-3">
-          <i class="bi bi-arrow-up-circle h1" id="arrowUpPaars"></i>
-        </a>
-      </div>
-    </footer>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- TODO fixen dat onderstaand enkel gebeurt als navbar ingeklapt is, en eens uitgevoerd, 
+        <!-- TODO fixen dat onderstaand enkel gebeurt als navbar ingeklapt is, en eens uitgevoerd, 
       check op size van screen zodat eventListeners weggaan als pagina terug groot genoeg is en dus navbar uitgerokken is en niet meer toegeklapt,
     anders visuele bug bij item in navbar klikken wanneer navbar niet ingeklapt is!!! -->
 
-    <!-- <script>
+        <!-- <script>
       const navLinks = document.querySelectorAll(".myNavCloseFn");
       const menuToggle = document.getElementById("navmenu");
       // if (document.title === "Jelle Van Goethem")
@@ -708,5 +520,5 @@
           });
         });
     </script> -->
-  </body>
+    </body>
 </html>

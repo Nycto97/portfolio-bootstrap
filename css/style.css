@@ -1,46 +1,46 @@
 body::before {
-  display: block;
-  content: "";
-  height: 25px;
+    display: block;
+    content: '';
+    height: 25px;
 }
 
 #buttonPaars {
-  color: black;
-  background-color: #ac80ff;
-  border: none;
+    color: black;
+    background-color: #ac80ff;
+    border: none;
 }
 
 #arrowUpPaars,
 #linkPaars {
-  color: #ac80ff;
-  text-decoration: none;
+    color: #ac80ff;
+    text-decoration: none;
 }
 
 .anchor {
-  display: block;
-  position: relative;
-  top: -95px;
-  visibility: hidden;
+    display: block;
+    position: relative;
+    top: -95px;
+    visibility: hidden;
 }
 
 .noTextDeco,
 .noTextDeco2 {
-  text-decoration: none;
-  color: #212529;
+    text-decoration: none;
+    color: #212529;
 }
 
 .noTextDeco3 {
-  text-decoration: none;
-  color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .noTextDeco:hover,
 .noTextDeco3:hover,
 .nav-link:hover,
 .navbar-brand:hover {
-  color: #ac80ff !important;
+    color: #ac80ff !important;
 }
 
 .noTextDeco2:hover {
-  color: #f39800;
+    color: #f39800;
 }
