@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -26,7 +26,7 @@
 
         <nav class="navbar navbar-expand-md bg-white navbar-light py-3 fixed-top">
             <div class="container">
-                <a href="#" class="navbar-brand text-dark">Jelle Van Goethem</a>
+                <a class="navbar-brand text-dark" href="#">Jelle Van Goethem</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
@@ -35,16 +35,16 @@
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="#over_mij" class="nav-link text-dark myNavCloseFn">Over mij</a>
+                            <a class="nav-link text-dark myNavCloseFn" href="#over_mij">Over mij</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#projecten" class="nav-link text-dark myNavCloseFn">Projecten</a>
+                            <a class="nav-link text-dark myNavCloseFn" href="#projecten">Projecten</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#contact" class="nav-link text-dark myNavCloseFn">Contact</a>
+                            <a class="nav-link text-dark myNavCloseFn" href="#contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a href="cv.html" class="nav-link text-dark myNavCloseFn">Mijn CV</a>
+                            <a class="nav-link text-dark myNavCloseFn" href="cv.html">Mijn CV</a>
                         </li>
                     </ul>
                 </div>
@@ -67,9 +67,9 @@
                         </p>
                         <button
                             class="btn btn-primary btn-lg mb-2 mb-lg-0"
+                            id="buttonPaars"
                             data-bs-toggle="modal"
-                            data-bs-target="#myModal"
-                            id="buttonPaars">
+                            data-bs-target="#myModal">
                             Stuur mij een bericht
                         </button>
                     </div>
@@ -88,25 +88,25 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="myModalLabel">Uw bericht aan Jelle</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form method="post" action="contactform.php">
                             <div class="mb-2">
-                                <label for="name" class="col-form-label">Naam*</label>
-                                <input type="text" class="form-control" name="name" id="name" required />
+                                <label class="col-form-label" for="name">Naam*</label>
+                                <input class="form-control" id="name" type="text" name="name" required />
                             </div>
                             <div class="mb-2">
-                                <label for="email" class="col-form-label">E-mail*</label>
-                                <input type="email" class="form-control" name="email" id="email" required />
+                                <label class="col-form-label" for="email">E-mail*</label>
+                                <input class="form-control" id="email" type="email" name="email" required />
                             </div>
                             <div class="mb-2">
-                                <label for="subject" class="col-form-label">Onderwerp*</label>
-                                <input type="text" class="form-control" name="subject" id="subject" required />
+                                <label class="col-form-label" for="subject">Onderwerp*</label>
+                                <input class="form-control" id="subject" type="text" name="subject" required />
                             </div>
                             <div class="mb-2">
-                                <label for="message" class="col-form-label">Bericht*</label>
-                                <textarea name="message" class="form-control" id="message" required></textarea>
+                                <label class="col-form-label" for="message">Bericht*</label>
+                                <textarea class="form-control" id="message" name="message" required></textarea>
                             </div>
                             <!-- Google reCAPTCHA box -->
                             <div class="mb-3">
@@ -114,9 +114,9 @@
                                 <div class="g-recaptcha" data-sitekey="6Ld7AWciAAAAAFi1E6gpc6fQa_8gXym7jrlA-Ldq"></div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluit</button>
+                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Sluit</button>
 
-                                <button type="submit" name="submit" class="btn btn-primary" id="buttonPaars">
+                                <button class="btn btn-primary" id="buttonPaars" type="submit" name="submit">
                                     Verstuur
                                 </button>
                             </div>
@@ -141,7 +141,7 @@
                                 <p class="card-text">
                                     Kom meer te weten over mij en mijn zoektocht naar een veelbelovende toekomst.
                                 </p>
-                                <a href="#over_mij" class="btn btn-primary" id="buttonPaars">Lees meer</a>
+                                <a class="btn btn-primary" id="buttonPaars" href="#over_mij">Lees meer</a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                                 <p class="card-text">
                                     Ontdek de projecten die ik gedaan heb, waaronder deze website en vorige prototypes.
                                 </p>
-                                <a href="#projecten" class="btn btn-dark" id="buttonPaars">Ontdek ze hier</a>
+                                <a class="btn btn-dark" id="buttonPaars" href="#projecten">Ontdek ze hier</a>
                             </div>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                                 <p class="card-text">
                                     Hier vind je mijn links, waaronder GitHub, LinkedIn en Facebook.
                                 </p>
-                                <a href="#contact" class="btn btn-primary" id="buttonPaars">Lees meer</a>
+                                <a class="btn btn-primary" id="buttonPaars" href="#contact">Lees meer</a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md">
-                        <img src="img/IMG_20191104_200425_crop.jpg" class="img-fluid" alt="" />
+                        <img class="img-fluid" src="img/IMG_20191104_200425_crop.jpg" alt="" />
                     </div>
                     <div class="col-md-12 col-lg-7 p-4 p-sm-5">
                         <h2>Aangename kennismaking</h2>
@@ -207,7 +207,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md d-block d-lg-none">
-                        <img src="img/11071844_824455047630059_1563663485074523956_o.jpg" class="img-fluid" alt="" />
+                        <img class="img-fluid" src="img/11071844_824455047630059_1563663485074523956_o.jpg" alt="" />
                     </div>
                     <div class="col-md-12 col-lg-7 p-4 p-sm-5">
                         <h2>Mijn achtergrond</h2>
@@ -221,9 +221,9 @@
                             2020 besloten om mijn
                             <em>diploma secundair onderwijs</em> te behalen via het volwassenenonderwijs bij
                             <a
+                                id="linkPaars"
                                 href="https://crescendo-cvo.be/nl/opleidingen/informatica/ict-administratie/"
                                 target="_blank"
-                                id="linkPaars"
                                 >Crescendo CVO</a
                             >. Ik heb midden 2021 het diploma secundair behaald in de richting
                             <em>ICT en Administratie</em> en kan nu opgelucht zeggen dat ik het middelbaar heb
@@ -231,7 +231,7 @@
                         </p>
                     </div>
                     <div class="col-md d-none d-lg-block">
-                        <img src="img/11071844_824455047630059_1563663485074523956_o.jpg" class="img-fluid" alt="" />
+                        <img class="img-fluid" src="img/11071844_824455047630059_1563663485074523956_o.jpg" alt="" />
                     </div>
                 </div>
             </div>
@@ -241,7 +241,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md">
-                        <img src="img/IMG_20191128_232613_crop.jpg" class="img-fluid" alt="" />
+                        <img class="img-fluid" src="img/IMG_20191128_232613_crop.jpg" alt="" />
                     </div>
                     <div class="col-md-12 col-lg-7 p-4 p-sm-5">
                         <h2>Mijn kijk op de toekomst</h2>
@@ -249,17 +249,17 @@
                             Om nog een stapje verder te gaan, heb ik mezelf overhaald om nog een opleiding te volgen.
                             Dit doe ik met de steun van de
                             <a
+                                id="linkPaars"
                                 href="https://www.vdab.be/opleidingen/aanbod/O-AMI-750487/cursus/C-AMI-191469/Graduaat_programmeren_-_1ste_jaar-SINT-KATELIJNE-WAVER/"
                                 target="_blank"
-                                id="linkPaars"
                                 >VDAB</a
                             >. Omdat ik graag met computers werk, niet creatief genoeg ben om te tekenen of om dingen te
                             ontwerpen, hou van structuur en cijfers en graag dingen laat werken, heb ik voor het
                             <em>graduaat Programmeren</em> gekozen. Met dit 2-jarig graduaat aan de
                             <a
+                                id="linkPaars"
                                 href="https://www.thomasmore.be/opleidingen/graduaat/programmeren-dag-avondonderwijs/programmeren-dagonderwijs/sint-katelijne-waver/"
                                 target="_blank"
-                                id="linkPaars"
                                 >Thomas More Hogeschool</a
                             >
                             hoop ik mijn kansen op de arbeidsmarkt te vergroten en een job te vinden die ik oprecht leuk
@@ -285,7 +285,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-light">
                             <div class="card-body text-center">
-                                <img src="img/portfolio-1_crop.png" class="rounded mb-3" alt="Portfolio Website" />
+                                <img class="rounded mb-3" src="img/portfolio-1_crop.png" alt="Portfolio Website" />
                                 <h3 class="card-title mb-2">Portfolio Website</h3>
                                 <p class="card-text">
                                     Persoonlijke website, gemaakt met HTML & CSS, die niet responsive is.
@@ -297,7 +297,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-light">
                             <div class="card-body text-center">
-                                <img src="img/portfolio-2_crop.png" class="rounded mb-3" alt="Responsive Portfolio" />
+                                <img class="rounded mb-3" src="img/portfolio-2_crop.png" alt="Responsive Portfolio" />
                                 <h3 class="card-title mb-2">Responsive Portfolio</h3>
                                 <p class="card-text">Mijn portfolio website responsive gemaakt met media queries.</p>
                             </div>
@@ -307,7 +307,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-light">
                             <div class="card-body text-center">
-                                <img src="img/portfolio-3_crop.png" class="rounded mb-3" alt="Bootstrap Portfolio" />
+                                <img class="rounded mb-3" src="img/portfolio-3_crop.png" alt="Bootstrap Portfolio" />
                                 <h3 class="card-title mb-2">Bootstrap Portfolio</h3>
                                 <p class="card-text">
                                     De website die u momenteel aan het bekijken bent m.b.v. Bootstrap.
@@ -319,7 +319,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-light">
                             <div class="card-body text-center">
-                                <img src="img/oop-project_crop.png" class="rounded mb-3" alt="OOP Project" />
+                                <img class="rounded mb-3" src="img/oop-project_crop.png" alt="OOP Project" />
                                 <h3 class="card-title mb-2">OOP Project</h3>
                                 <p class="card-text">Java project voor het vak Object Oriented Programming.</p>
                             </div>
@@ -329,7 +329,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-light">
                             <div class="card-body text-center">
-                                <img src="img/ygo2_crop.png" class="rounded mb-3" alt="Yu-Gi-Oh! DB" />
+                                <img class="rounded mb-3" src="img/ygo2_crop.png" alt="Yu-Gi-Oh! DB" />
                                 <h3 class="card-title mb-2">Yu-Gi-Oh! DB</h3>
                                 <p class="card-text" style="color: #212529">
                                     Java-Spring project voor het vak Advanced Programming Techniques.
@@ -343,7 +343,7 @@
                              omdat op mobile maar 1 card per rij getoond wordt. -->
                         <div class="card bg-light mb-4 mb-sm-5">
                             <div class="card-body text-center">
-                                <img src="img/HY_crop.png" class="rounded mb-3" alt="HY App" />
+                                <img class="rounded mb-3" src="img/HY_crop.png" alt="HY App" />
                                 <h3 class="card-title mb-2">HY App</h3>
                                 <p class="card-text" style="color: #212529">
                                     Java-Spring project voor het vak Projecten voor het Werkveld.
@@ -358,21 +358,21 @@
         <!-- Cards 3 fotogalerij -->
 
         <div class="container col-lg-5 pt-4 pt-sm-5">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel slide" id="carouselExampleControls" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img
-                            src="img/10511522_736071756468389_8002414371274091488_o.jpg"
                             class="d-block w-100"
+                            src="img/10511522_736071756468389_8002414371274091488_o.jpg"
                             alt="..." />
                     </div>
                     <div class="carousel-item">
-                        <img src="img/IMG_20191104_200425_crop.jpg" class="d-block w-100" alt="..." />
+                        <img class="d-block w-100" src="img/IMG_20191104_200425_crop.jpg" alt="..." />
                     </div>
                     <div class="carousel-item">
                         <img
-                            src="img/11071844_824455047630059_1563663485074523956_o.jpg"
                             class="d-block w-100"
+                            src="img/11071844_824455047630059_1563663485074523956_o.jpg"
                             alt="..." />
                     </div>
                 </div>
@@ -397,7 +397,7 @@
 
         <!-- Accordion contact me -->
 
-        <section id="contact" class="p-md-5 my-4 my-md-0">
+        <section class="p-md-5 my-4 my-md-0" id="contact">
             <div class="container">
                 <h2 class="text-center mb-4">Contact</h2>
                 <div class="accordion accordion-flush" id="questions">
@@ -411,9 +411,9 @@
                                 GitHub
                             </button>
                         </h2>
-                        <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-collapse collapse" id="question-one" data-bs-parent="#questions">
                             <div class="accordion-body">
-                                <a href="https://github.com/Nycto97" target="_blank" id="linkPaars"
+                                <a id="linkPaars" href="https://github.com/Nycto97" target="_blank"
                                     >github.com/Nycto97</a
                                 >
                             </div>
@@ -430,9 +430,9 @@
                                 LinkedIn
                             </button>
                         </h2>
-                        <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-collapse collapse" id="question-two" data-bs-parent="#questions">
                             <div class="accordion-body">
-                                <a href="https://www.linkedin.com/in/JelleVanGoethem" target="_blank" id="linkPaars"
+                                <a id="linkPaars" href="https://www.linkedin.com/in/JelleVanGoethem" target="_blank"
                                     >linkedin.com/in/JelleVanGoethem</a
                                 >
                             </div>
@@ -449,9 +449,9 @@
                                 Facebook
                             </button>
                         </h2>
-                        <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-collapse collapse" id="question-three" data-bs-parent="#questions">
                             <div class="accordion-body">
-                                <a href="https://www.facebook.com/JelleVG" target="_blank" id="linkPaars"
+                                <a id="linkPaars" href="https://www.facebook.com/JelleVG" target="_blank"
                                     >facebook.com/JelleVG</a
                                 >
                             </div>
@@ -467,12 +467,12 @@
             <div class="container">
                 <p class="lead mb-0">
                     Gemaakt en beheerd door
-                    <a href="https://www.linkedin.com/in/JelleVanGoethem" class="noTextDeco3" target="_blank"
+                    <a class="noTextDeco3" href="https://www.linkedin.com/in/JelleVanGoethem" target="_blank"
                         >Jelle Van Goethem</a
                     >
                 </p>
 
-                <a href="#" class="position-absolute bottom-0 end-0 p-2 mx-3">
+                <a class="position-absolute bottom-0 end-0 p-2 mx-3" href="#">
                     <i class="bi bi-arrow-up-circle h1" id="arrowUpPaars"></i>
                 </a>
             </div>
