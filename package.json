@@ -1,0 +1,19 @@
+{
+    "name": "portfolio-bootstrap",
+    "description": "Portfolio website of Jelle Van Goethem",
+    "version": "1.0.0",
+    "author": "Jelle Van Goethem",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://github.com/Nycto97/portfolio-bootstrap#readme",
+    "bugs": {
+        "url": "https://github.com/Nycto97/portfolio-bootstrap/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Nycto97/portfolio-bootstrap.git"
+    },
+    "keywords": [
+        "bootstrap",
+        "portfolio"
+    ]
+}
