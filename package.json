@@ -16,6 +16,9 @@
         "prettier": "^3.2.5",
         "prettier-plugin-organize-attributes": "^1.0.0"
     },
+    "scripts": {
+        "format": "prettier --ignore-unknown --write . && echo Formatted files with Prettier!"
+    },
     "keywords": [
         "bootstrap",
         "portfolio"
