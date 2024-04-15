@@ -12,17 +12,15 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="icon" type="image/x-icon" href="/img/nycto.ico" />
-        <!-- Google recaptcha API library -->
+        <!-- Google reCAPTCHA API library -->
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <title>Jelle Van Goethem</title>
     </head>
     <body>
-        <?php 
-    // Include form submission script 
-    include_once 'contactform.php'; 
-    ?>
+        <!-- Include form submission script -->
+        <?php include_once 'contactform.php'; ?>
 
-        <!--nav-->
+        <!-- Nav -->
 
         <nav class="navbar navbar-expand-md bg-white navbar-light py-3 fixed-top">
             <div class="container">
@@ -51,7 +49,7 @@
             </div>
         </nav>
 
-        <!--jumbotron-ish-->
+        <!-- Jumbotron-ish -->
 
         <section class="bg-dark text-light p-4 p-lg-0 pt-lg-5 text-center text-sm-start">
             <div class="container">
@@ -81,7 +79,7 @@
             </div>
         </section>
 
-        <!--modal contact me-->
+        <!-- Modal contact me -->
 
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -96,25 +94,10 @@
                                 <label for="name" class="col-form-label">Naam*</label>
                                 <input type="text" class="form-control" name="name" id="name" required />
                             </div>
-                            <!-- <div class="mb-2">
-                <label for="last-name" class="col-form-label"
-                  >Achternaam*</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="last-name"
-                  required
-                />
-              </div> -->
                             <div class="mb-2">
                                 <label for="email" class="col-form-label">E-mail*</label>
                                 <input type="email" class="form-control" name="email" id="email" required />
                             </div>
-                            <!-- <div class="mb-3">
-                <label for="phone" class="col-form-label">Telefoonnummer</label>
-                <input type="tel" class="form-control" id="phone" />
-              </div> -->
                             <div class="mb-2">
                                 <label for="subject" class="col-form-label">Onderwerp*</label>
                                 <input type="text" class="form-control" name="subject" id="subject" required />
@@ -141,7 +124,7 @@
             </div>
         </div>
 
-        <!--cards 1 links-->
+        <!-- Cards 1 links -->
 
         <section class="p-lg-5">
             <div class="container">
@@ -192,7 +175,7 @@
             </div>
         </section>
 
-        <!--over mij-->
+        <!-- Over mij -->
 
         <section class="p-lg-5">
             <p class="anchor" id="over_mij"></p>
@@ -287,7 +270,7 @@
             </div>
         </section>
 
-        <!--cards 2 projecten-->
+        <!-- Cards 2 projecten -->
 
         <section class="p-md-5 bg-dark">
             <p class="anchor" id="projecten"></p>
@@ -359,9 +342,8 @@
                     </div>
 
                     <div class="col-md-6 col-lg-4">
-                        <!-- ALLEEN laatste card moet onderstaande margin bottom hebben,
-            omdat: op mobile wordt 1 card getoond en dan moet de margin
-            enkel op de onderste card -->
+                        <!-- Alleen de laatste card moet onderstaande margin bottom hebben, 
+                             omdat op mobile maar 1 card per rij getoond wordt. -->
                         <div class="card bg-light mb-4 mb-sm-5">
                             <a href="https://hy-skw-team5.herokuapp.com/" class="noTextDeco2" target="_blank">
                                 <div class="card-body text-center">
@@ -378,7 +360,7 @@
             </div>
         </section>
 
-        <!--cards 3 fotogalerij-->
+        <!-- Cards 3 fotogalerij -->
 
         <div class="container col-lg-5 pt-4 pt-sm-5">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -418,7 +400,7 @@
             </div>
         </div>
 
-        <!--accordion contact me-->
+        <!-- Accordion contact me -->
 
         <section id="contact" class="p-md-5 my-4 my-md-0">
             <div class="container">
@@ -484,7 +466,7 @@
             </div>
         </section>
 
-        <!--footer-->
+        <!-- Footer -->
 
         <footer class="p-3 bg-dark text-white text-center position-relative">
             <div class="container">
@@ -505,20 +487,5 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"></script>
-
-        <!-- TODO fixen dat onderstaand enkel gebeurt als navbar ingeklapt is, en eens uitgevoerd, 
-      check op size van screen zodat eventListeners weggaan als pagina terug groot genoeg is en dus navbar uitgerokken is en niet meer toegeklapt,
-    anders visuele bug bij item in navbar klikken wanneer navbar niet ingeklapt is!!! -->
-
-        <!-- <script>
-      const navLinks = document.querySelectorAll(".myNavCloseFn");
-      const menuToggle = document.getElementById("navmenu");
-      // if (document.title === "Jelle Van Goethem")
-        navLinks.forEach((l) => {
-          l.addEventListener("click", () => {
-            new bootstrap.Collapse(menuToggle).toggle();
-          });
-        });
-    </script> -->
     </body>
 </html>
