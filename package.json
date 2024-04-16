@@ -23,7 +23,8 @@
         "*": "prettier --ignore-unknown --write"
     },
     "scripts": {
-        "format": "prettier --ignore-unknown --write . && echo Formatted files with Prettier!"
+        "format": "prettier --ignore-unknown --write . && echo Formatted files with Prettier!",
+        "prepare": "husky"
     },
     "keywords": [
         "bootstrap",
