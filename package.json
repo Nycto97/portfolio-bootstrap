@@ -19,6 +19,9 @@
         "prettier": "^3.2.5",
         "prettier-plugin-organize-attributes": "^1.0.0"
     },
+    "lint-staged": {
+        "*": "prettier --ignore-unknown --write"
+    },
     "scripts": {
         "format": "prettier --ignore-unknown --write . && echo Formatted files with Prettier!"
     },
