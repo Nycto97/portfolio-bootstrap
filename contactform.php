@@ -1,13 +1,20 @@
 <?php
 
-require 'vendor/autoload.php';
+require_once realpath(__DIR__ . '/vendor/autoload.php');
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, 'production.env');
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+$dotenv->required([
+    'SITE_KEY',
+    'SECRET_KEY'
+])->notEmpty();
+
 // Google reCAPTCHA API key configuration 
-$siteKey = getenv('SITE_KEY'); 
-$secretKey = getenv('SECRET_KEY'); 
+$siteKey = $_ENV['SITE_KEY'];
+$secretKey = $_ENV['SECRET_KEY'];
  
 // Email configuration 
 $toEmail = 'jelle.van.goethem@hotmail.com'; 
