@@ -55,7 +55,6 @@ if(isset($_POST['submit'])){
             if($responseData->success){ 
  
                 // Send email notification to the site admin 
-                $subject = 'New contact request submitted'; 
                 $htmlContent = " 
                     <h2>Contact Request Details</h2> 
                     <p><b>Name: </b>".$name."</p> 
