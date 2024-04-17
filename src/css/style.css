@@ -24,13 +24,16 @@ body::before {
 }
 
 .noTextDeco,
-.noTextDeco2 {
+.noTextDeco2,
+.noTextDeco3 {
     text-decoration: none;
+}
+.noTextDeco,
+.noTextDeco2 {
     color: #212529;
 }
 
 .noTextDeco3 {
-    text-decoration: none;
     color: #ffffff;
 }
 
