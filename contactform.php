@@ -35,16 +35,16 @@ if(isset($_POST['submit'])){
      
     // Validate form fields 
     if(empty($name)){ 
-        $valErr .= 'Please enter your name.<br/>'; 
+        $valErr .= '- Please enter your name.\n'; 
     } 
     if(empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL) === false){ 
-        $valErr .= 'Please enter a valid email.<br/>'; 
+        $valErr .= '- Please enter a valid email.\n'; 
     } 
     if(empty($subject)){ 
-        $valErr .= 'Please enter subject.<br/>'; 
+        $valErr .= '- Please enter a subject.\n'; 
     } 
     if(empty($message)){ 
-        $valErr .= 'Please enter your message.<br/>'; 
+        $valErr .= '- Please enter a message.\n'; 
     } 
      
     if(empty($valErr)){ 
@@ -87,10 +87,9 @@ if(isset($_POST['submit'])){
             } 
         }else{ 
             $statusMsg = 'Please check the reCAPTCHA box.';
-            header("location:javascript://history.go(-1)");
         } 
     }else{ 
-        $statusMsg = '<p>Please fill all the mandatory fields:</p>'.trim($valErr, '<br/>');
+        $statusMsg = 'Please fill in all mandatory fields:\n\n' . $valErr;
     }
     echo '<script>
     alert("'.$statusMsg.'");
