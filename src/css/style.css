@@ -1,6 +1,6 @@
 /*
  * Bootstrap Portfolio
- * Personal portfolio website of Jelle Van Goethem.
+ * Portfolio website of Jelle Van Goethem.
  * Copyright (C) 2024 Jelle Van Goethem
  *
  * This program is free software: you can redistribute it and/or modify it
@@ -27,23 +27,33 @@ body::before {
     height: 25px;
 }
 
-#buttonPaars {
-    color: black;
-    background-color: #ac80ff;
-    border: none;
-}
-
-#arrowUpPaars,
-#linkPaars {
-    color: #ac80ff;
-    text-decoration: none;
-}
-
 .anchor {
     display: block;
     position: relative;
     top: -95px;
     visibility: hidden;
+}
+
+.arrowUpPurple {
+    color: #ac80ff;
+    text-decoration: none;
+}
+
+.buttonPurple {
+    color: black;
+    background-color: #ac80ff;
+    border: none;
+}
+
+.buttonPurple:hover {
+    color: black;
+    background-color: #975fff;
+    border: none;
+}
+
+.linkPurple {
+    color: #ac80ff;
+    text-decoration: none;
 }
 
 .noTextDeco,
@@ -56,6 +66,10 @@ body::before {
     color: #212529;
 }
 
+.noTextDeco2:hover {
+    color: #f39800;
+}
+
 .noTextDeco3 {
     color: #ffffff;
 }
@@ -65,8 +79,4 @@ body::before {
 .nav-link:hover,
 .navbar-brand:hover {
     color: #ac80ff !important;
-}
-
-.noTextDeco2:hover {
-    color: #f39800;
 }

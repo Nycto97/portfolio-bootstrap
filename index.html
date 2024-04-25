@@ -1,6 +1,6 @@
 <!--
  * Bootstrap Portfolio
- * Personal portfolio website of Jelle Van Goethem.
+ * Portfolio website of Jelle Van Goethem.
  * Copyright (C) 2024 Jelle Van Goethem
  *
  * This program is free software: you can redistribute it and/or modify it
@@ -39,7 +39,7 @@
     </head>
     <body>
         <!-- Include form submission script -->
-        <?php include_once 'contactform.php'; ?>
+        <?php include_once 'contact-form.php'; ?>
 
         <!-- Nav -->
 
@@ -47,23 +47,23 @@
             <div class="container">
                 <a class="navbar-brand text-dark" href="#">Jelle Van Goethem</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navmenu">
+                <div class="collapse navbar-collapse" id="navMenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark myNavCloseFn" href="#over_mij">Over mij</a>
+                            <a class="nav-link text-dark" href="#about_me">Over mij</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark myNavCloseFn" href="#projecten">Projecten</a>
+                            <a class="nav-link text-dark" href="#projects">Projecten</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark myNavCloseFn" href="#contact">Contact</a>
+                            <a class="nav-link text-dark" href="#contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark myNavCloseFn" href="cv.html">Mijn CV</a>
+                            <a class="nav-link text-dark" href="resume.html">Mijn CV</a>
                         </li>
                     </ul>
                 </div>
@@ -84,10 +84,9 @@
                             informatie te delen en om mensen de mogelijkheid te geven om contact op te nemen met mij.
                         </p>
                         <button
-                            class="btn btn-primary btn-lg mb-2 mb-lg-0"
-                            id="buttonPaars"
+                            class="btn btn-lg buttonPurple mb-2 mb-lg-0"
                             data-bs-toggle="modal"
-                            data-bs-target="#myModal">
+                            data-bs-target="#contactModal">
                             Stuur mij een bericht
                         </button>
                     </div>
@@ -101,15 +100,15 @@
 
         <!-- Modal contact me -->
 
-        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="myModalLabel">Uw bericht aan Jelle</h5>
+                        <h5 class="modal-title" id="contactModalLabel">Uw bericht aan Jelle</h5>
                         <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="contactform.php">
+                        <form method="post" action="contact-form.php">
                             <div class="mb-2">
                                 <label class="col-form-label" for="name">Naam*</label>
                                 <input class="form-control" id="name" type="text" name="name" />
@@ -134,9 +133,7 @@
                             <div class="modal-footer">
                                 <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Sluit</button>
 
-                                <button class="btn btn-primary" id="buttonPaars" type="submit" name="submit">
-                                    Verstuur
-                                </button>
+                                <button class="btn buttonPurple" type="submit" name="submit">Verstuur</button>
                             </div>
                         </form>
                     </div>
@@ -159,7 +156,7 @@
                                 <p class="card-text">
                                     Kom meer te weten over mij en mijn zoektocht naar een veelbelovende toekomst.
                                 </p>
-                                <a class="btn btn-primary" id="buttonPaars" href="#over_mij">Lees meer</a>
+                                <a class="btn buttonPurple" href="#about_me">Lees meer</a>
                             </div>
                         </div>
                     </div>
@@ -173,7 +170,7 @@
                                 <p class="card-text">
                                     Ontdek de projecten die ik gedaan heb, waaronder deze website en vorige versies.
                                 </p>
-                                <a class="btn btn-dark" id="buttonPaars" href="#projecten">Ontdek ze hier</a>
+                                <a class="btn buttonPurple" href="#projects">Ontdek ze hier</a>
                             </div>
                         </div>
                     </div>
@@ -187,7 +184,7 @@
                                 <p class="card-text">
                                     Hier vind je mijn links, waaronder GitHub, LinkedIn en Facebook.
                                 </p>
-                                <a class="btn btn-primary" id="buttonPaars" href="#contact">Lees meer</a>
+                                <a class="btn buttonPurple" href="#contact">Lees meer</a>
                             </div>
                         </div>
                     </div>
@@ -195,10 +192,10 @@
             </div>
         </section>
 
-        <!-- Over mij -->
+        <!-- About me -->
 
         <section class="p-lg-5">
-            <p class="anchor" id="over_mij"></p>
+            <p class="anchor" id="about_me"></p>
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md">
@@ -238,7 +235,7 @@
                             diploma. Begin 2020 besloot ik om mijn
                             <em>diploma secundair onderwijs</em> te behalen via het volwassenenonderwijs bij
                             <a
-                                id="linkPaars"
+                                class="linkPurple"
                                 href="https://crescendo-cvo.be/nl/opleidingen/informatica/ict-administratie/"
                                 target="_blank"
                                 >Crescendo CVO</a
@@ -247,14 +244,14 @@
                             afgemaakt. <br /><br />Om nog een stapje verder te gaan, had ik mezelf overhaald om nog een
                             opleiding te volgen. Dit deed ik met de steun van de
                             <a
-                                id="linkPaars"
+                                class="linkPurple"
                                 href="https://www.vdab.be/opleidingen/aanbod/O-AMI-750487/cursus/C-AMI-191469/Graduaat_programmeren_-_1ste_jaar-SINT-KATELIJNE-WAVER/"
                                 target="_blank"
                                 >VDAB</a
                             >. Omdat ik graag met computers werk en interesse heb in software en websites, heb ik voor
                             de opleiding <em>Graduaat Programmeren</em> aan de
                             <a
-                                id="linkPaars"
+                                class="linkPurple"
                                 href="https://www.thomasmore.be/opleidingen/graduaat/programmeren-dag-avondonderwijs/programmeren-dagonderwijs/sint-katelijne-waver/"
                                 target="_blank"
                                 >Thomas More Hogeschool</a
@@ -293,10 +290,10 @@
             </div>
         </section>
 
-        <!-- Cards 2 projecten -->
+        <!-- Cards 2 projects -->
 
         <section class="p-md-5 bg-dark">
-            <p class="anchor" id="projecten"></p>
+            <p class="anchor" id="projects"></p>
             <div class="container">
                 <h2 class="text-center text-light pt-5 pt-md-0">Mijn projecten</h2>
 
@@ -416,7 +413,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-light">
                             <div class="card-body text-center">
@@ -453,10 +450,10 @@
             </div>
         </section>
 
-        <!-- Cards 3 fotogalerij -->
+        <!-- Cards 3 photo gallery -->
 
         <div class="container col-lg-5 pt-4 pt-sm-5">
-            <div class="carousel slide" id="carouselExampleControls" data-bs-ride="carousel">
+            <div class="carousel slide" id="carousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img
@@ -464,9 +461,11 @@
                             src="src/img/10511522_736071756468389_8002414371274091488_o.jpg"
                             alt="..." />
                     </div>
+
                     <div class="carousel-item">
                         <img class="d-block w-100" src="src/img/IMG_20191104_200425_crop.jpg" alt="..." />
                     </div>
+
                     <div class="carousel-item">
                         <img
                             class="d-block w-100"
@@ -474,19 +473,12 @@
                             alt="..." />
                     </div>
                 </div>
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Vorige</span>
                 </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Volgende</span>
                 </button>
@@ -505,13 +497,13 @@
                                 class="accordion-button collapsed text-dark"
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target="#question-one">
+                                data-bs-target="#questionOne">
                                 GitHub
                             </button>
                         </h2>
-                        <div class="accordion-collapse collapse" id="question-one" data-bs-parent="#questions">
+                        <div class="accordion-collapse collapse" id="questionOne" data-bs-parent="#questions">
                             <div class="accordion-body">
-                                <a id="linkPaars" href="https://github.com/Nycto97" target="_blank"
+                                <a class="linkPurple" href="https://github.com/Nycto97" target="_blank"
                                     >github.com/Nycto97</a
                                 >
                             </div>
@@ -524,13 +516,13 @@
                                 class="accordion-button collapsed text-dark"
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target="#question-two">
+                                data-bs-target="#questionTwo">
                                 LinkedIn
                             </button>
                         </h2>
-                        <div class="accordion-collapse collapse" id="question-two" data-bs-parent="#questions">
+                        <div class="accordion-collapse collapse" id="questionTwo" data-bs-parent="#questions">
                             <div class="accordion-body">
-                                <a id="linkPaars" href="https://www.linkedin.com/in/JelleVanGoethem" target="_blank"
+                                <a class="linkPurple" href="https://www.linkedin.com/in/JelleVanGoethem" target="_blank"
                                     >linkedin.com/in/JelleVanGoethem</a
                                 >
                             </div>
@@ -543,13 +535,13 @@
                                 class="accordion-button collapsed text-dark"
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target="#question-three">
+                                data-bs-target="#questionThree">
                                 Facebook
                             </button>
                         </h2>
-                        <div class="accordion-collapse collapse" id="question-three" data-bs-parent="#questions">
+                        <div class="accordion-collapse collapse" id="questionThree" data-bs-parent="#questions">
                             <div class="accordion-body">
-                                <a id="linkPaars" href="https://www.facebook.com/JelleVG" target="_blank"
+                                <a class="linkPurple" href="https://www.facebook.com/JelleVG" target="_blank"
                                     >facebook.com/JelleVG</a
                                 >
                             </div>
@@ -571,7 +563,7 @@
                 </p>
 
                 <a class="position-absolute bottom-0 end-0 p-2 mx-3" href="#">
-                    <i class="bi bi-arrow-up-circle h1" id="arrowUpPaars"></i>
+                    <i class="bi bi-arrow-up-circle arrowUpPurple h1"></i>
                 </a>
             </div>
         </footer>
