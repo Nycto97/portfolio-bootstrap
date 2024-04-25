@@ -2,7 +2,7 @@
 
 /*
  * Bootstrap Portfolio
- * Personal portfolio website of Jelle Van Goethem.
+ * Portfolio website of Jelle Van Goethem.
  * Copyright (C) 2024 Jelle Van Goethem
  *
  * This program is free software: you can redistribute it and/or modify it
@@ -35,14 +35,14 @@ $secretKey = $_ENV['SECRET_KEY'];
 // Email configuration
 $toEmail = 'jelle.van.goethem@hotmail.com';
 $fromName = $_POST['name'];
-$formEmail = $_POST['email'];
+$fromEmail = $_POST['email'];
 
-$postData = $statusMsg = $valErr = '';
+$postData = $statusMessage = $validationError = '';
 $status = 'error';
 
 // If the form is submitted
 if (isset($_POST['submit'])) {
-    // Get the submitted form data
+    // Get the submitted form data and trim whitespace
     $postData = $_POST;
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
@@ -51,19 +51,19 @@ if (isset($_POST['submit'])) {
 
     // Validate form fields
     if (empty($name)) {
-        $valErr .= '- Please enter your name.\n';
+        $validationError .= '- Please enter your name.\n';
     }
     if (empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-        $valErr .= '- Please enter a valid email.\n';
+        $validationError .= '- Please enter a valid email.\n';
     }
     if (empty($subject)) {
-        $valErr .= '- Please enter a subject.\n';
+        $validationError .= '- Please enter a subject.\n';
     }
     if (empty($message)) {
-        $valErr .= '- Please enter a message.\n';
+        $validationError .= '- Please enter a message.\n';
     }
 
-    if (empty($valErr)) {
+    if (empty($validationError)) {
         // Validate reCAPTCHA box
         if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
             // Verify the reCAPTCHA response
@@ -79,7 +79,6 @@ if (isset($_POST['submit'])) {
 
             // If reCAPTCHA response is valid
             if ($responseData->success) {
-                // Send email notification to the site admin
                 // prettier-ignore
                 $htmlContent = "
                     <p><b>Name: </b>".$name."</p> 
@@ -92,28 +91,29 @@ if (isset($_POST['submit'])) {
                 $headers = 'MIME-Version: 1.0' . "\r\n";
                 $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
                 // More headers
-                $headers .= 'From:' . $fromName . ' <' . $formEmail . '>' . "\r\n";
+                $headers .= 'From:' . $fromName . ' <' . $fromEmail . '>' . "\r\n";
 
                 // Send email
                 @mail($toEmail, $subject, $htmlContent, $headers);
 
                 $status = 'success';
-                $statusMsg = 'Thank you! Your contact request has submitted successfully, I will get back to you soon.';
+                $statusMessage =
+                    'Thank you! Your contact request has submitted successfully, I will get back to you soon.';
                 $postData = '';
             } else {
-                $statusMsg = 'Robot verification failed, please try again.';
+                $statusMessage = 'Robot verification failed, please try again.';
             }
         } else {
-            $statusMsg = 'Please check the reCAPTCHA box.';
+            $statusMessage = 'Please check the reCAPTCHA box.';
         }
     } else {
-        $statusMsg = 'Please fill in all mandatory fields:\n\n' . $valErr;
+        $statusMessage = 'Please fill in all mandatory fields:\n\n' . $validationError;
     }
 
     // prettier-ignore
     echo '
         <script>
-            alert("'.$statusMsg.'");
+            alert("'.$statusMessage.'");
             window.location.href = "index.html";
         </script>
     ';
