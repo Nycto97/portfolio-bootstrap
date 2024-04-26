@@ -43,8 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const isNavHamburgerMenuOpen = () => navMenu.classList.contains('show');
     const isNavbarHamburgerMenu = () => window.innerWidth < BOOTSTRAP_MEDIUM_BREAKPOINT;
 
-    const addClickListenerToBody = () => body.addEventListener('click', hideNavHamburgerMenu);
-    const removeClickListenerFromBody = () => body.removeEventListener('click', hideNavHamburgerMenu);
+    const handleNavHamburgerMenuHidingOnBodyClick = (event) => {
+        const clickedElementClassName = event.target.className;
+        /*
+         * Dynamically get class names from denied elements, by id, to ensure
+         * that the class names are correct, even if the class names change.
+         */
+        const navbarClassName = document.getElementById('navbar').className;
+        const navbarContainerClassName = document.getElementById('navbarContainer').className;
+        const elementDenyHideList = [navbarClassName, navbarContainerClassName];
+
+        if (elementDenyHideList.includes(clickedElementClassName)) return;
+
+        hideNavHamburgerMenu();
+    };
+
+    const addClickListenerToBody = () => {
+        body.addEventListener('click', handleNavHamburgerMenuHidingOnBodyClick);
+    };
+    const removeClickListenerFromBody = () => {
+        body.removeEventListener('click', handleNavHamburgerMenuHidingOnBodyClick);
+    };
 
     const addCollapseListenersToNavMenu = () => {
         navMenu.addEventListener('show.bs.collapse', addClickListenerToBody);
