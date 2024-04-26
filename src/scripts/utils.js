@@ -18,7 +18,7 @@
  */
 
 /*
- * Script to close the navbar menu when a navbar menu link is clicked in hamburger mode.
+ * Script to close the navbar menu when a navbar hamburger menu link is clicked.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,28 +26,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenuLinks = navMenu.querySelectorAll('a');
 
     /**
-     * Closes the navbar menu.
+     * Closes the navbar hamburger menu.
      *
      * Despite this function using the toggle() function, it will always close the navbar menu
      * because this function only gets called when the navbar menu is open,
      * meaning this function will technically always close the menu.
      */
-    const closeNavMenu = () => bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false }).toggle();
-    const isNavHamburger = () => window.innerWidth < 768; /* Bootstrap medium (md) breakpoint = ≥768px */
+    const closeNavHamburgerMenu = () => {
+        bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false }).toggle();
+    };
 
-    /* Check and add event listeners on page load */
-    if (isNavHamburger()) navMenuLinks.forEach((navMenuLink) => navMenuLink.addEventListener('click', closeNavMenu));
+    /* Add event listeners when the navbar menu is shown */
+    navMenu.addEventListener('show.bs.collapse', () => {
+        navMenuLinks.forEach((navMenuLink) => {
+            navMenuLink.addEventListener('click', closeNavHamburgerMenu);
+        });
+    });
 
-    /* Check and add event listeners on window resize */
-    window.addEventListener('resize', () => {
-        if (isNavHamburger()) {
-            navMenuLinks.forEach((navMenuLink) => navMenuLink.addEventListener('click', closeNavMenu));
-        } else {
-            /*
-             * Remove listeners to fix issue where clicking navbar links will
-             * visually toggle the navbar menu in non-hamburger button mode.
-             */
-            navMenuLinks.forEach((navMenuLink) => navMenuLink.removeEventListener('click', closeNavMenu));
-        }
+    /* Remove event listeners when the navbar menu is hidden */
+    navMenu.addEventListener('hide.bs.collapse', () => {
+        /*
+         * Remove listeners to fix issue where clicking navbar links will
+         * visually toggle the navbar menu in non-hamburger button mode.
+         */
+        navMenuLinks.forEach((navMenuLink) => {
+            navMenuLink.removeEventListener('click', closeNavHamburgerMenu);
+        });
     });
 });
