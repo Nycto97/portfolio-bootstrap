@@ -22,6 +22,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    const navHamburgerMenuButton = document.getElementById('navHamburgerMenuButton');
     const navMenu = document.getElementById('navMenu');
     const navMenuLinks = navMenu.querySelectorAll('a');
 
@@ -35,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeNavHamburgerMenu = () => {
         bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false }).toggle();
     };
+    const forceCloseNavHamburgerMenu = () => {
+        navMenu.classList.remove('show');
+        navHamburgerMenuButton.classList.add('collapsed');
+    };
+
+    const isHamburgerNavMenuOpen = () => navMenu.classList.contains('show');
+    const isNavMenuHamburger = () => window.innerWidth < 768; /* Bootstrap medium (md) breakpoint = ≥768px */
 
     /* Add event listeners when the navbar menu is shown */
     navMenu.addEventListener('show.bs.collapse', () => {
@@ -52,5 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenuLinks.forEach((navMenuLink) => {
             navMenuLink.removeEventListener('click', closeNavHamburgerMenu);
         });
+    });
+
+    /*
+     * Force close the navbar hamburger menu when the window width exceeds the medium (md) breakpoint
+     * (hamburger menu turns into normal navbar) and the navbar menu is open (in the background).
+     * Using closeNavMenu's approach isn't possible in this scenario.
+     *
+     * By doing this, we prevent the navbar menu from being open after the menu was open and the
+     * window width increased (making hamburger menu turn into normal navbar) and decreased again
+     * (navbar would turn into OPEN hamburger menu), e.g. resizing the window.
+     */
+    window.addEventListener('resize', () => {
+        if (!isNavMenuHamburger() && isHamburgerNavMenuOpen()) {
+            forceCloseNavHamburgerMenu();
+        }
     });
 });
