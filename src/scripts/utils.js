@@ -22,6 +22,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    const homeLink = document.getElementById('homeLink');
     const navHamburgerMenuButton = document.getElementById('navHamburgerMenuButton');
     const navMenu = document.getElementById('navMenu');
     const navMenuLinks = navMenu.querySelectorAll('a');
@@ -41,11 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         navHamburgerMenuButton.classList.add('collapsed');
     };
 
-    const isHamburgerNavMenuOpen = () => navMenu.classList.contains('show');
+    const isNavHamburgerMenuOpen = () => navMenu.classList.contains('show');
     const isNavMenuHamburger = () => window.innerWidth < 768; /* Bootstrap medium (md) breakpoint = ≥768px */
 
     /* Add event listeners when the navbar menu is shown */
     navMenu.addEventListener('show.bs.collapse', () => {
+        homeLink.addEventListener('click', closeNavHamburgerMenu);
         navMenuLinks.forEach((navMenuLink) => {
             navMenuLink.addEventListener('click', closeNavHamburgerMenu);
         });
@@ -53,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Remove event listeners when the navbar menu is hidden */
     navMenu.addEventListener('hide.bs.collapse', () => {
+        homeLink.removeEventListener('click', closeNavHamburgerMenu);
         /*
          * Remove listeners to fix issue where clicking navbar links will
          * visually toggle the navbar menu in non-hamburger button mode.
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * (navbar would turn into OPEN hamburger menu), e.g. resizing the window.
      */
     window.addEventListener('resize', () => {
-        if (!isNavMenuHamburger() && isHamburgerNavMenuOpen()) {
+        if (!isNavMenuHamburger() && isNavHamburgerMenuOpen()) {
             forceCloseNavHamburgerMenu();
         }
     });
