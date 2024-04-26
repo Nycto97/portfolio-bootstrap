@@ -33,10 +33,9 @@ const BOOTSTRAP_MEDIUM_BREAKPOINT = 768;
 const COLLAPSE = bootstrap.Collapse;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const homeLink = document.getElementById('homeLink');
+    const body = document.body;
     const navMenu = document.getElementById('navMenu');
     const navMenuCollapseInstance = COLLAPSE.getOrCreateInstance(navMenu, { toggle: false });
-    const navMenuLinks = navMenu.querySelectorAll('a');
 
     const hideNavHamburgerMenu = () => navMenuCollapseInstance.hide();
     const hideNavHamburgerMenuWithoutAnimation = () => navMenu.classList.remove('show');
@@ -44,22 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const isNavHamburgerMenuOpen = () => navMenu.classList.contains('show');
     const isNavbarHamburgerMenu = () => window.innerWidth < BOOTSTRAP_MEDIUM_BREAKPOINT;
 
-    const addClickListenersToNavbarLinks = () => {
-        homeLink.addEventListener('click', hideNavHamburgerMenu);
-        navMenuLinks.forEach((navMenuLink) => navMenuLink.addEventListener('click', hideNavHamburgerMenu));
-    };
-    const removeClickListenersFromNavbarLinks = () => {
-        homeLink.removeEventListener('click', hideNavHamburgerMenu);
-        navMenuLinks.forEach((navMenuLink) => navMenuLink.removeEventListener('click', hideNavHamburgerMenu));
-    };
+    const addClickListenerToBody = () => body.addEventListener('click', hideNavHamburgerMenu);
+    const removeClickListenerFromBody = () => body.removeEventListener('click', hideNavHamburgerMenu);
 
     const addCollapseListenersToNavMenu = () => {
-        navMenu.addEventListener('show.bs.collapse', addClickListenersToNavbarLinks);
-        navMenu.addEventListener('hide.bs.collapse', removeClickListenersFromNavbarLinks);
+        navMenu.addEventListener('show.bs.collapse', addClickListenerToBody);
+        navMenu.addEventListener('hide.bs.collapse', removeClickListenerFromBody);
     };
     const removeCollapseListenersFromNavMenu = () => {
-        navMenu.removeEventListener('show.bs.collapse', addClickListenersToNavbarLinks);
-        navMenu.removeEventListener('hide.bs.collapse', removeClickListenersFromNavbarLinks);
+        navMenu.removeEventListener('show.bs.collapse', addClickListenerToBody);
+        navMenu.removeEventListener('hide.bs.collapse', removeClickListenerFromBody);
     };
 
     const onWindowResize = () => {
