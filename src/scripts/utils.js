@@ -18,65 +18,46 @@
  */
 
 /*
- * Script to close the navbar menu when a navbar hamburger menu link is clicked.
+ * Script to hide the navbar hamburger menu when a navbar hamburger menu link is clicked,
+ * or when the window gets resized in a way that would turn the hamburger menu into a normal
+ * navbar and back into a hamburger menu, while the hamburger menu was shown before resizing.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     const homeLink = document.getElementById('homeLink');
-    const navHamburgerMenuButton = document.getElementById('navHamburgerMenuButton');
     const navMenu = document.getElementById('navMenu');
     const navMenuLinks = navMenu.querySelectorAll('a');
 
-    /**
-     * Closes the navbar hamburger menu.
-     *
-     * Despite this function using the toggle() function, it will always close the navbar menu
-     * because this function only gets called when the navbar menu is open,
-     * meaning this function will technically always close the menu.
-     */
-    const closeNavHamburgerMenu = () => {
-        bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false }).toggle();
-    };
-    const forceCloseNavHamburgerMenu = () => {
-        navMenu.classList.remove('show');
-        navHamburgerMenuButton.classList.add('collapsed');
+    const hideNavHamburgerMenu = () => {
+        bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false }).hide();
     };
 
     const isNavHamburgerMenuOpen = () => navMenu.classList.contains('show');
     const isNavMenuHamburger = () => window.innerWidth < 768; /* Bootstrap medium (md) breakpoint = ≥768px */
 
-    /* Add event listeners when the navbar menu is shown */
     navMenu.addEventListener('show.bs.collapse', () => {
-        homeLink.addEventListener('click', closeNavHamburgerMenu);
+        homeLink.addEventListener('click', hideNavHamburgerMenu);
         navMenuLinks.forEach((navMenuLink) => {
-            navMenuLink.addEventListener('click', closeNavHamburgerMenu);
+            navMenuLink.addEventListener('click', hideNavHamburgerMenu);
         });
     });
 
-    /* Remove event listeners when the navbar menu is hidden */
     navMenu.addEventListener('hide.bs.collapse', () => {
-        homeLink.removeEventListener('click', closeNavHamburgerMenu);
-        /*
-         * Remove listeners to fix issue where clicking navbar links will
-         * visually toggle the navbar menu in non-hamburger button mode.
-         */
+        homeLink.removeEventListener('click', hideNavHamburgerMenu);
         navMenuLinks.forEach((navMenuLink) => {
-            navMenuLink.removeEventListener('click', closeNavHamburgerMenu);
+            navMenuLink.removeEventListener('click', hideNavHamburgerMenu);
         });
     });
 
     /*
-     * Force close the navbar hamburger menu when the window width exceeds the medium (md) breakpoint
-     * (hamburger menu turns into normal navbar) and the navbar menu is open (in the background).
-     * Using closeNavMenu's approach isn't possible in this scenario.
-     *
-     * By doing this, we prevent the navbar menu from being open after the menu was open and the
-     * window width increased (making hamburger menu turn into normal navbar) and decreased again
-     * (navbar would turn into OPEN hamburger menu), e.g. resizing the window.
+     * Hide the navbar hamburger menu when the window width exceeds the medium (md) breakpoint
+     * (hamburger menu turns into normal navbar) while the navbar menu is shown (in the background)
+     * to prevent the navbar hamburger menu from being shown after resizing in a way that would turn
+     * the navbar back into a hamburger menu.
      */
     window.addEventListener('resize', () => {
         if (!isNavMenuHamburger() && isNavHamburgerMenuOpen()) {
-            forceCloseNavHamburgerMenu();
+            hideNavHamburgerMenu();
         }
     });
 });
