@@ -23,41 +23,55 @@
  * navbar and back into a hamburger menu, while the hamburger menu was shown before resizing.
  */
 
+const BOOTSTRAP_MEDIUM_BREAKPOINT = /* >= */ 768; /* px */
+const COLLAPSE = bootstrap.Collapse;
+
 document.addEventListener('DOMContentLoaded', () => {
     const homeLink = document.getElementById('homeLink');
     const navMenu = document.getElementById('navMenu');
+    const navMenuCollapseInstance = COLLAPSE.getOrCreateInstance(navMenu, { toggle: false });
     const navMenuLinks = navMenu.querySelectorAll('a');
 
-    const hideNavHamburgerMenu = () => {
-        bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false }).hide();
-    };
+    const hideNavHamburgerMenu = () => navMenuCollapseInstance.hide();
+    const hideNavHamburgerMenuWithoutAnimation = () => navMenu.classList.remove('show');
 
     const isNavHamburgerMenuOpen = () => navMenu.classList.contains('show');
-    const isNavMenuHamburger = () => window.innerWidth < 768; /* Bootstrap medium (md) breakpoint = ≥768px */
+    const isNavbarHamburgerMenu = () => window.innerWidth < BOOTSTRAP_MEDIUM_BREAKPOINT;
 
-    navMenu.addEventListener('show.bs.collapse', () => {
+    const addClickListenersToNavbarLinks = () => {
         homeLink.addEventListener('click', hideNavHamburgerMenu);
-        navMenuLinks.forEach((navMenuLink) => {
-            navMenuLink.addEventListener('click', hideNavHamburgerMenu);
-        });
-    });
-
-    navMenu.addEventListener('hide.bs.collapse', () => {
+        navMenuLinks.forEach((navMenuLink) => navMenuLink.addEventListener('click', hideNavHamburgerMenu));
+    };
+    const removeClickListenersFromNavbarLinks = () => {
         homeLink.removeEventListener('click', hideNavHamburgerMenu);
-        navMenuLinks.forEach((navMenuLink) => {
-            navMenuLink.removeEventListener('click', hideNavHamburgerMenu);
-        });
-    });
+        navMenuLinks.forEach((navMenuLink) => navMenuLink.removeEventListener('click', hideNavHamburgerMenu));
+    };
 
-    /*
-     * Hide the navbar hamburger menu when the window width exceeds the medium (md) breakpoint
-     * (hamburger menu turns into normal navbar) while the navbar menu is shown (in the background)
-     * to prevent the navbar hamburger menu from being shown after resizing in a way that would turn
-     * the navbar back into a hamburger menu.
-     */
-    window.addEventListener('resize', () => {
-        if (!isNavMenuHamburger() && isNavHamburgerMenuOpen()) {
-            hideNavHamburgerMenu();
+    const addCollapseListenersToNavMenu = () => {
+        navMenu.addEventListener('show.bs.collapse', addClickListenersToNavbarLinks);
+        navMenu.addEventListener('hide.bs.collapse', removeClickListenersFromNavbarLinks);
+    };
+    const removeCollapseListenersFromNavMenu = () => {
+        navMenu.removeEventListener('show.bs.collapse', addClickListenersToNavbarLinks);
+        navMenu.removeEventListener('hide.bs.collapse', removeClickListenersFromNavbarLinks);
+    };
+
+    const onWindowResize = () => {
+        if (isNavbarHamburgerMenu()) addCollapseListenersToNavMenu();
+        else {
+            removeCollapseListenersFromNavMenu();
+
+            /*
+             * Hide the navbar hamburger menu when the window width exceeds the medium (md)
+             * breakpoint (hamburger menu turns into normal navbar) while the navbar menu is
+             * shown (in the background) to prevent the navbar hamburger menu from being shown
+             * after resizing in a way that would turn the navbar back into a hamburger menu.
+             */
+            if (isNavHamburgerMenuOpen()) hideNavHamburgerMenuWithoutAnimation();
         }
-    });
+    };
+
+    if (isNavbarHamburgerMenu()) addCollapseListenersToNavMenu();
+
+    window.addEventListener('resize', onWindowResize);
 });
