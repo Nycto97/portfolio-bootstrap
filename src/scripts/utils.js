@@ -17,61 +17,21 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * Script to hide the navbar hamburger menu when a navbar hamburger menu link is clicked,
- * or when the window gets resized in a way that would turn the hamburger menu into a normal
- * navbar and back into a hamburger menu, while the hamburger menu was shown before resizing.
+/**
+ * A debounce function will delay calling a function until after the specified
+ * delay has passed since the last time it was invoked. If the debounced function
+ * is invoked again before the delay has passed, it resets the delay.
+ *
+ * @param {Function} func - The function to debounce.
+ * @param {number} delay - The delay in milliseconds.
+ *
+ * @returns {Function} The debounced function.
  */
+export function debounce(func, delay) {
+    let timeoutId = null;
 
-const BOOTSTRAP_MEDIUM_BREAKPOINT = /* >= */ 768; /* px */
-const COLLAPSE = bootstrap.Collapse;
-
-document.addEventListener('DOMContentLoaded', () => {
-    const homeLink = document.getElementById('homeLink');
-    const navMenu = document.getElementById('navMenu');
-    const navMenuCollapseInstance = COLLAPSE.getOrCreateInstance(navMenu, { toggle: false });
-    const navMenuLinks = navMenu.querySelectorAll('a');
-
-    const hideNavHamburgerMenu = () => navMenuCollapseInstance.hide();
-    const hideNavHamburgerMenuWithoutAnimation = () => navMenu.classList.remove('show');
-
-    const isNavHamburgerMenuOpen = () => navMenu.classList.contains('show');
-    const isNavbarHamburgerMenu = () => window.innerWidth < BOOTSTRAP_MEDIUM_BREAKPOINT;
-
-    const addClickListenersToNavbarLinks = () => {
-        homeLink.addEventListener('click', hideNavHamburgerMenu);
-        navMenuLinks.forEach((navMenuLink) => navMenuLink.addEventListener('click', hideNavHamburgerMenu));
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
     };
-    const removeClickListenersFromNavbarLinks = () => {
-        homeLink.removeEventListener('click', hideNavHamburgerMenu);
-        navMenuLinks.forEach((navMenuLink) => navMenuLink.removeEventListener('click', hideNavHamburgerMenu));
-    };
-
-    const addCollapseListenersToNavMenu = () => {
-        navMenu.addEventListener('show.bs.collapse', addClickListenersToNavbarLinks);
-        navMenu.addEventListener('hide.bs.collapse', removeClickListenersFromNavbarLinks);
-    };
-    const removeCollapseListenersFromNavMenu = () => {
-        navMenu.removeEventListener('show.bs.collapse', addClickListenersToNavbarLinks);
-        navMenu.removeEventListener('hide.bs.collapse', removeClickListenersFromNavbarLinks);
-    };
-
-    const onWindowResize = () => {
-        if (isNavbarHamburgerMenu()) addCollapseListenersToNavMenu();
-        else {
-            removeCollapseListenersFromNavMenu();
-
-            /*
-             * Hide the navbar hamburger menu when the window width exceeds the medium (md)
-             * breakpoint (hamburger menu turns into normal navbar) while the navbar menu is
-             * shown (in the background) to prevent the navbar hamburger menu from being shown
-             * after resizing in a way that would turn the navbar back into a hamburger menu.
-             */
-            if (isNavHamburgerMenuOpen()) hideNavHamburgerMenuWithoutAnimation();
-        }
-    };
-
-    if (isNavbarHamburgerMenu()) addCollapseListenersToNavMenu();
-
-    window.addEventListener('resize', onWindowResize);
-});
+}
