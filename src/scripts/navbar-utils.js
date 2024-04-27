@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const navMenu = document.getElementById('navMenu');
     const navMenuCollapseInstance = COLLAPSE.getOrCreateInstance(navMenu, { toggle: false });
+    const navbar = document.getElementById('navbar');
+    const navbarContainer = document.getElementById('navbarContainer');
 
     const hideNavHamburgerMenu = () => navMenuCollapseInstance.hide();
     const hideNavHamburgerMenuWithoutAnimation = () => navMenu.classList.remove('show');
@@ -45,8 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleNavHamburgerMenuHidingOnBodyClick = (event) => {
         const clickedElement = event.target;
-        const navbar = document.getElementById('navbar');
-        const navbarContainer = document.getElementById('navbarContainer');
 
         if (clickedElement === navbar || clickedElement === navbarContainer) return;
 
