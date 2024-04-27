@@ -44,16 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const isNavbarHamburgerMenu = () => window.innerWidth < BOOTSTRAP_MEDIUM_BREAKPOINT;
 
     const handleNavHamburgerMenuHidingOnBodyClick = (event) => {
-        const clickedElementClassName = event.target.className;
-        /*
-         * Dynamically get class names from denied elements, by id, to ensure
-         * that the class names are correct, even if the class names change.
-         */
-        const navbarClassName = document.getElementById('navbar').className;
-        const navbarContainerClassName = document.getElementById('navbarContainer').className;
-        const elementDenyHideList = [navbarClassName, navbarContainerClassName];
+        const clickedElement = event.target;
+        const navbar = document.getElementById('navbar');
+        const navbarContainer = document.getElementById('navbarContainer');
 
-        if (elementDenyHideList.includes(clickedElementClassName)) return;
+        if (clickedElement === navbar || clickedElement === navbarContainer) return;
 
         hideNavHamburgerMenu();
     };
