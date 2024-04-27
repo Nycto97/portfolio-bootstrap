@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
          * shown (in the background) to prevent the navbar hamburger menu from being shown
          * after resizing in a way that would turn the navbar back into a hamburger menu.
          */
-        if (!isNavbarHamburgerMenu() && isNavHamburgerMenuOpen()) {
+        if (isNavHamburgerMenuOpen() && !isNavbarHamburgerMenu()) {
             hideNavHamburgerMenuWithoutAnimation();
         }
     };
