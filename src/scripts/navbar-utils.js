@@ -69,22 +69,27 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.removeEventListener('hide.bs.collapse', removeClickListenerFromBody);
     };
 
-    const onWindowResize = () => {
-        if (isNavbarHamburgerMenu()) addCollapseListenersToNavMenu();
-        else {
-            removeCollapseListenersFromNavMenu();
-
-            /*
-             * Hide the navbar hamburger menu when the window width exceeds the medium (md)
-             * breakpoint (hamburger menu turns into normal navbar) while the navbar menu is
-             * shown (in the background) to prevent the navbar hamburger menu from being shown
-             * after resizing in a way that would turn the navbar back into a hamburger menu.
-             */
-            if (isNavHamburgerMenuOpen()) hideNavHamburgerMenuWithoutAnimation();
+    const handleNavHamburgerMenuHidingWithoutAnimationOnWindowResize = () => {
+        /*
+         * Hide the navbar hamburger menu when the window width exceeds the medium (md)
+         * breakpoint (hamburger menu turns into normal navbar) while the navbar menu is
+         * shown (in the background) to prevent the navbar hamburger menu from being shown
+         * after resizing in a way that would turn the navbar back into a hamburger menu.
+         */
+        if (!isNavbarHamburgerMenu() && isNavHamburgerMenuOpen()) {
+            hideNavHamburgerMenuWithoutAnimation();
         }
     };
 
+    const handleNavMenuCollapseListenersOnWindowResizeDebounced = () => {
+        if (isNavbarHamburgerMenu()) addCollapseListenersToNavMenu();
+        else removeCollapseListenersFromNavMenu();
+    };
+
+    /* ---------------------------------------------- CODE ---------------------------------------------- */
+
     if (isNavbarHamburgerMenu()) addCollapseListenersToNavMenu();
 
-    window.addEventListener('resize', debounce(onWindowResize, 125));
+    window.addEventListener('resize', handleNavHamburgerMenuHidingWithoutAnimationOnWindowResize);
+    window.addEventListener('resize', debounce(handleNavMenuCollapseListenersOnWindowResizeDebounced, 125));
 });
