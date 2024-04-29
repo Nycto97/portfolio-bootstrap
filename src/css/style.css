@@ -31,7 +31,7 @@ body::before {
     display: block;
     position: relative;
     top: -95px;
-    visibility: hidden;
+    margin: 0;
 }
 
 .arrowUpPurple {
